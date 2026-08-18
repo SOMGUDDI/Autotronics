@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 12: Digital Logic Gates · Autotronics Fundamentals</title>
+<title>Module 12: Digital Logic Gates Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,19 +39,19 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
     <article class="markdown-body">
-<h1 id="12-digital-logic-gates">12. Digital Logic — Gates</h1>
+<h1 id="12-digital-logic-gates">12. Digital Logic â€” Gates</h1>
 <blockquote>
-<p>Framed in class as <strong>"Digital electronics (for reference)"</strong> — the
+<p>Framed in class as <strong>"Digital electronics (for reference)"</strong> â€” the
 foundational gate-level material needed before ECUs/digital fundamentals
 are covered in depth later in the course.</p>
 </blockquote>
-<h2 id="121-and-gate-multiplication">12.1 AND Gate — "multiplication"</h2>
-<pre><code>Y = A · B
+<h2 id="121-and-gate-multiplication">12.1 AND Gate â€” "multiplication"</h2>
+<pre><code>Y = A Â· B
 </code></pre>
 <table>
 <thead>
@@ -84,14 +84,14 @@ are covered in depth later in the course.</p>
 </tr>
 </tbody>
 </table>
-<p>Output is HIGH <strong>only if all inputs are HIGH</strong> — behaves like Boolean
+<p>Output is HIGH <strong>only if all inputs are HIGH</strong> â€” behaves like Boolean
 multiplication (product of 0s and 1s).</p>
 <p><strong>Applications shown:</strong> a two-input push-button AND-gate driving an alarm
 horn (both PB1 <strong>and</strong> PB2 must be pressed); an electrical ladder-logic
 diagram equivalent, where two contacts in <strong>series</strong> implement the same
 AND function (only conducts if both switches are closed).</p>
-<figure class="diagram"><img alt="AND gate, truth table, and ladder-logic equivalent" src="../../assets/img/and-gate.png"><figcaption>AND gate, truth table, and ladder-logic equivalent</figcaption></figure>
-<h2 id="122-or-gate-addition">12.2 OR Gate — "addition"</h2>
+<figure class="diagram"><img alt="AND gate, truth table, and ladder-logic equivalent" src="../assets/img/and-gate.png"><figcaption>AND gate, truth table, and ladder-logic equivalent</figcaption></figure>
+<h2 id="122-or-gate-addition">12.2 OR Gate â€” "addition"</h2>
 <pre><code>Y = A + B
 </code></pre>
 <table>
@@ -125,13 +125,13 @@ AND function (only conducts if both switches are closed).</p>
 </tr>
 </tbody>
 </table>
-<p>Output is HIGH <strong>if any input is HIGH</strong> — like Boolean addition.</p>
+<p>Output is HIGH <strong>if any input is HIGH</strong> â€” like Boolean addition.</p>
 <p><strong>Applications:</strong> an alarm horn triggered by <strong>either</strong> PB1 <strong>or</strong> PB2; the
 ladder-logic equivalent is two contacts in <strong>parallel</strong> (conducts if
 either switch is closed).</p>
-<figure class="diagram"><img alt="OR gate, truth table, and ladder-logic equivalent" src="../../assets/img/or-gate.png"><figcaption>OR gate, truth table, and ladder-logic equivalent</figcaption></figure>
+<figure class="diagram"><img alt="OR gate, truth table, and ladder-logic equivalent" src="../assets/img/or-gate.png"><figcaption>OR gate, truth table, and ladder-logic equivalent</figcaption></figure>
 <h2 id="123-not-gate-inverter">12.3 NOT Gate (Inverter)</h2>
-<pre><code>Q = Ā   (Q = NOT A)
+<pre><code>Q = Ä€   (Q = NOT A)
 </code></pre>
 <table>
 <thead>
@@ -151,16 +151,16 @@ either switch is closed).</p>
 </tr>
 </tbody>
 </table>
-<p>Simply inverts the input — a square wave in produces the inverted square
+<p>Simply inverts the input â€” a square wave in produces the inverted square
 wave out.</p>
-<figure class="diagram"><img alt="NOT gate symbol, truth table, waveform" src="../../assets/img/not-gate.png"><figcaption>NOT gate symbol, truth table, waveform</figcaption></figure>
-<h3 id="not-gate-transistor-level-hardware-implementation">NOT gate — transistor-level hardware implementation</h3>
+<figure class="diagram"><img alt="NOT gate symbol, truth table, waveform" src="../assets/img/not-gate.png"><figcaption>NOT gate symbol, truth table, waveform</figcaption></figure>
+<h3 id="not-gate-transistor-level-hardware-implementation">NOT gate â€” transistor-level hardware implementation</h3>
 <p>A single BJT (or MOSFET) with a pull-up resistor implements a NOT gate:</p>
 <ul>
-<li><strong>Input LOW</strong> → transistor OFF (no collector-emitter current) → output
+<li><strong>Input LOW</strong> â†’ transistor OFF (no collector-emitter current) â†’ output
   pulled HIGH through R1 (to Vcc).</li>
-<li><strong>Input HIGH</strong> → transistor ON (saturated) → collector-emitter path
-  becomes a near-short to ground → output pulled LOW.</li>
+<li><strong>Input HIGH</strong> â†’ transistor ON (saturated) â†’ collector-emitter path
+  becomes a near-short to ground â†’ output pulled LOW.</li>
 </ul>
 <blockquote>
 <p>"When the transistor is off, no current flows through the
@@ -170,21 +170,21 @@ turns on, allowing current to flow through the collector-emitter circuit
 directly to ground. This ground path creates a shortcut that bypasses
 the output, which causes the output to go LOW."</p>
 </blockquote>
-<figure class="diagram"><img alt="NOT gate hardware implementation using a BJT" src="../../assets/img/not-gate-hw.png"><figcaption>NOT gate hardware implementation using a BJT</figcaption></figure>
-<h3 id="not-gate-cmos-implementation">NOT gate — CMOS implementation</h3>
+<figure class="diagram"><img alt="NOT gate hardware implementation using a BJT" src="../assets/img/not-gate-hw.png"><figcaption>NOT gate hardware implementation using a BJT</figcaption></figure>
+<h3 id="not-gate-cmos-implementation">NOT gate â€” CMOS implementation</h3>
 <p>A CMOS inverter uses a <strong>PMOS</strong> transistor (top, source tied to <code>Vdd</code>) and
 an <strong>NMOS</strong> transistor (bottom, source tied to ground), gates tied
 together as the input:</p>
 <ul>
-<li><strong>Input = 0:</strong> PMOS ON, NMOS OFF → output pulled to <code>Vdd</code> (logic 1).</li>
-<li><strong>Input = 1:</strong> PMOS OFF, NMOS ON → output pulled to ground (logic 0).</li>
+<li><strong>Input = 0:</strong> PMOS ON, NMOS OFF â†’ output pulled to <code>Vdd</code> (logic 1).</li>
+<li><strong>Input = 1:</strong> PMOS OFF, NMOS ON â†’ output pulled to ground (logic 0).</li>
 </ul>
-<p>Exactly one of the two transistors conducts at a time — this is why CMOS
+<p>Exactly one of the two transistors conducts at a time â€” this is why CMOS
 gates draw almost no static current, a major reason CMOS dominates modern
 digital ICs.</p>
-<figure class="diagram"><img alt="CMOS NOT gate — PMOS/NMOS pair" src="../../assets/img/not-gate-cmos.png"><figcaption>CMOS NOT gate — PMOS/NMOS pair</figcaption></figure>
+<figure class="diagram"><img alt="CMOS NOT gate â€” PMOS/NMOS pair" src="../assets/img/not-gate-cmos.png"><figcaption>CMOS NOT gate â€” PMOS/NMOS pair</figcaption></figure>
 <h2 id="124-nand-gate-and-not">12.4 NAND Gate (AND + NOT)</h2>
-<pre><code>Q = A·B̄  (NOT(A AND B))
+<pre><code>Q = AÂ·BÌ„  (NOT(A AND B))
 </code></pre>
 <table>
 <thead>
@@ -220,9 +220,9 @@ digital ICs.</p>
 <p>Built as an AND gate followed by a NOT (bubble on the output of the AND
 symbol). Waveform: output is HIGH except when both inputs are
 simultaneously HIGH.</p>
-<figure class="diagram"><img alt="NAND gate, symbols, waveform, truth table" src="../../assets/img/nand-gate.png"><figcaption>NAND gate, symbols, waveform, truth table</figcaption></figure>
+<figure class="diagram"><img alt="NAND gate, symbols, waveform, truth table" src="../assets/img/nand-gate.png"><figcaption>NAND gate, symbols, waveform, truth table</figcaption></figure>
 <h2 id="125-nor-gate-or-not">12.5 NOR Gate (OR + NOT)</h2>
-<pre><code>Q = A+B̄  (NOT(A OR B))
+<pre><code>Q = A+BÌ„  (NOT(A OR B))
 </code></pre>
 <table>
 <thead>
@@ -256,9 +256,9 @@ simultaneously HIGH.</p>
 </tbody>
 </table>
 <p>Output is HIGH only when <strong>both</strong> inputs are LOW.</p>
-<figure class="diagram"><img alt="NOR gate, symbols, waveform, truth table" src="../../assets/img/nor-gate.png"><figcaption>NOR gate, symbols, waveform, truth table</figcaption></figure>
+<figure class="diagram"><img alt="NOR gate, symbols, waveform, truth table" src="../assets/img/nor-gate.png"><figcaption>NOR gate, symbols, waveform, truth table</figcaption></figure>
 <h2 id="126-xor-exclusive-or-gate">12.6 XOR (Exclusive OR) Gate</h2>
-<pre><code>Y = A ⊕ B
+<pre><code>Y = A âŠ• B
 </code></pre>
 <table>
 <thead>
@@ -294,18 +294,18 @@ simultaneously HIGH.</p>
 <p>Output is HIGH only when the inputs <strong>differ</strong>. Can be built from
 <strong>NAND + OR</strong> gates combined (shown on the slide as an alternate
 implementation), reflecting that any logic function can be built purely
-from NAND (or purely from NOR) gates — a "universal gate" property.</p>
-<figure class="diagram"><img alt="XOR gate symbol, NAND/OR realisation, truth table" src="../../assets/img/xor-gate.png"><figcaption>XOR gate symbol, NAND/OR realisation, truth table</figcaption></figure>
+from NAND (or purely from NOR) gates â€” a "universal gate" property.</p>
+<figure class="diagram"><img alt="XOR gate symbol, NAND/OR realisation, truth table" src="../assets/img/xor-gate.png"><figcaption>XOR gate symbol, NAND/OR realisation, truth table</figcaption></figure>
 <h2 id="127-real-ic-packages">12.7 Real IC packages</h2>
 <p>Standard logic-gate ICs (e.g. the classic <strong>74-series</strong>) package multiple
 gates per chip with standard pin numbering:</p>
 <ul>
-<li><strong>7408</strong> — Quad 2-input AND gates</li>
-<li><strong>7402</strong> — Quad 2-input NOR gates</li>
+<li><strong>7408</strong> â€” Quad 2-input AND gates</li>
+<li><strong>7402</strong> â€” Quad 2-input NOR gates</li>
 </ul>
 <p>Each chip has power (<code>V_CC</code>) and ground (<code>GND</code>) pins, plus multiple
 independent gate blocks sharing the package.</p>
-<figure class="diagram"><img alt="7408 (AND) and 7402 (NOR) IC pinouts" src="../../assets/img/ic-arrangement.png"><figcaption>7408 (AND) and 7402 (NOR) IC pinouts</figcaption></figure>
+<figure class="diagram"><img alt="7408 (AND) and 7402 (NOR) IC pinouts" src="../assets/img/ic-arrangement.png"><figcaption>7408 (AND) and 7402 (NOR) IC pinouts</figcaption></figure>
 <h2 id="128-quick-reference-truth-table-summary">12.8 Quick-reference truth table summary</h2>
 <table>
 <thead>
@@ -318,7 +318,7 @@ independent gate blocks sharing the package.</p>
 <tbody>
 <tr>
 <td>AND</td>
-<td><code>A·B</code></td>
+<td><code>AÂ·B</code></td>
 <td>All inputs HIGH</td>
 </tr>
 <tr>
@@ -328,31 +328,33 @@ independent gate blocks sharing the package.</p>
 </tr>
 <tr>
 <td>NOT</td>
-<td><code>Ā</code></td>
+<td><code>Ä€</code></td>
 <td>Input is LOW</td>
 </tr>
 <tr>
 <td>NAND</td>
-<td><code>(A·B)‾</code></td>
+<td><code>(AÂ·B)â€¾</code></td>
 <td>NOT all inputs HIGH</td>
 </tr>
 <tr>
 <td>NOR</td>
-<td><code>(A+B)‾</code></td>
+<td><code>(A+B)â€¾</code></td>
 <td>All inputs LOW</td>
 </tr>
 <tr>
 <td>XOR</td>
-<td><code>A⊕B</code></td>
+<td><code>AâŠ•B</code></td>
 <td>Inputs differ</td>
 </tr>
 </tbody>
 </table>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="11-transistors-bjt-mosfet.html">← Module 11: Transistors: BJT &amp; MOSFET</a><a class="next" href="13-boolean-algebra.html">Module 13: Boolean Algebra →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="11-transistors-bjt-mosfet.html">â† Module 11: Transistors: BJT &amp; MOSFET</a><a class="next" href="13-boolean-algebra.html">Module 13: Boolean Algebra â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

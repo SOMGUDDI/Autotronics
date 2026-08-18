@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 13: Boolean Algebra · Autotronics Fundamentals</title>
+<title>Module 13: Boolean Algebra Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,69 +39,69 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
     <article class="markdown-body">
 <h1 id="13-boolean-algebra-de-morgans-law">13. Boolean Algebra &amp; De Morgan's Law</h1>
-<h2 id="131-motivating-example-switches-operating-a-machine">13.1 Motivating example — switches operating a machine</h2>
+<h2 id="131-motivating-example-switches-operating-a-machine">13.1 Motivating example â€” switches operating a machine</h2>
 <p>Three scenario statements used to introduce Boolean expressions from
 real switch arrangements:</p>
-<p><strong>(a)</strong> A machine can be operated by either of two operators, A or B — the
+<p><strong>(a)</strong> A machine can be operated by either of two operators, A or B â€” the
 power can be connected from either of two locations.</p>
-<pre><code>Y = A + B      (OR — two switches in parallel; either closes the circuit)
+<pre><code>Y = A + B      (OR â€” two switches in parallel; either closes the circuit)
 </code></pre>
 <p><strong>(b)</strong> Due to safety requirements, power must be channelled through
 <strong>both</strong> stations to operate the machine.</p>
-<pre><code>Y = A · B      (AND — two switches in series; both must close)
+<pre><code>Y = A Â· B      (AND â€” two switches in series; both must close)
 </code></pre>
 <p><strong>(c)</strong> Final safety regulations allow either station to power the machine
 <strong>only if</strong> the operator is out of danger (implying a third safety
 condition <code>C</code> must also be satisfied).</p>
-<pre><code>Y = (A + B) · C
+<pre><code>Y = (A + B) Â· C
 </code></pre>
-<figure class="diagram"><img alt="Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined" src="../../assets/img/boolean-laws.png"><figcaption>Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined</figcaption></figure>
+<figure class="diagram"><img alt="Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined" src="../assets/img/boolean-laws.png"><figcaption>Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined</figcaption></figure>
 <h2 id="132-basic-boolean-identities">13.2 Basic Boolean identities</h2>
 <p><strong>Idempotent laws:</strong></p>
 <pre><code>A + A = A        (Anything ORed with itself equals itself)
-A · A = A        (Anything ANDed with itself equals itself)
+A Â· A = A        (Anything ANDed with itself equals itself)
 </code></pre>
 <p><strong>Complement laws:</strong></p>
-<pre><code>A + 0 = A          A · 1 = A
-A + A' = 1         A · A' = 0
-1 + A = 1          0 · A = 0
+<pre><code>A + 0 = A          A Â· 1 = A
+A + A' = 1         A Â· A' = 0
+1 + A = 1          0 Â· A = 0
 </code></pre>
 <p><strong>Commutative laws:</strong></p>
 <pre><code>A + B = B + A
-A · B = B · A
+A Â· B = B Â· A
 </code></pre>
 <p><strong>Associative / Distributive laws:</strong></p>
 <pre><code>A + (B + C) = (A + B) + C
-A · (B · C) = (A · B) · C
-A · (B + C) = A·B + A·C          (Distributive law)
-A + B·C = (A+B)·(A+C)
+A Â· (B Â· C) = (A Â· B) Â· C
+A Â· (B + C) = AÂ·B + AÂ·C          (Distributive law)
+A + BÂ·C = (A+B)Â·(A+C)
 </code></pre>
 <h2 id="133-de-morgans-theorem">13.3 De Morgan's Theorem</h2>
-<p>The two De Morgan identities — essential for converting between AND/OR
+<p>The two De Morgan identities â€” essential for converting between AND/OR
 forms and for implementing logic using only NAND or only NOR gates:</p>
-<pre><code>A + B = A' · B'          (complement of OR = AND of complements)
-A · B = A' + B'          (complement of AND = OR of complements)
+<pre><code>A + B = A' Â· B'          (complement of OR = AND of complements)
+A Â· B = A' + B'          (complement of AND = OR of complements)
 </code></pre>
-<figure class="diagram"><img alt="De Morgan's Law statement" src="../../assets/img/demorgan.png"><figcaption>De Morgan&#x27;s Law statement</figcaption></figure>
+<figure class="diagram"><img alt="De Morgan's Law statement" src="../assets/img/demorgan.png"><figcaption>De Morgan&#x27;s Law statement</figcaption></figure>
 <h3 id="worked-simplification-using-de-morgans-law">Worked simplification using De Morgan's law</h3>
 <p>Given circuit implementing:</p>
-<pre><code>Q = (Ā · B̄) · B̄
+<pre><code>Q = (Ä€ Â· BÌ„) Â· BÌ„
 </code></pre>
-<p>Applying De Morgan (<code>Ā·B̄ = A+B</code>, then working through):</p>
-<pre><code>Q = (A + B)' · B    ...  (applying the theorem step shown on slide)
-Q = Ā·B̄·B = Ā·B̄ + B̄·B = Ā·B̄ + 0 = Ā·B̄
+<p>Applying De Morgan (<code>Ä€Â·BÌ„ = A+B</code>, then working through):</p>
+<pre><code>Q = (A + B)' Â· B    ...  (applying the theorem step shown on slide)
+Q = Ä€Â·BÌ„Â·B = Ä€Â·BÌ„ + BÌ„Â·B = Ä€Â·BÌ„ + 0 = Ä€Â·BÌ„
 </code></pre>
 <p>Net result: a two-level NAND-based circuit simplifies down to a single
-<strong>NOT</strong> gate feeding an <strong>AND</strong> gate (<code>Q = Ā · B</code>), demonstrating how
+<strong>NOT</strong> gate feeding an <strong>AND</strong> gate (<code>Q = Ä€ Â· B</code>), demonstrating how
 Boolean algebra reduces gate count in real digital circuits.</p>
-<figure class="diagram"><img alt="Worked simplification: NAND circuit reduces via De Morgan's law" src="../../assets/img/boolean-simplify.png"><figcaption>Worked simplification: NAND circuit reduces via De Morgan&#x27;s law</figcaption></figure>
-<h2 id="134-worked-design-example-art-gallery-light-switch">13.4 Worked design example — art gallery light switch</h2>
+<figure class="diagram"><img alt="Worked simplification: NAND circuit reduces via De Morgan's law" src="../assets/img/boolean-simplify.png"><figcaption>Worked simplification: NAND circuit reduces via De Morgan&#x27;s law</figcaption></figure>
+<h2 id="134-worked-design-example-art-gallery-light-switch">13.4 Worked design example â€” art gallery light switch</h2>
 <p><strong>Problem statement (verbatim from slide):</strong></p>
 <blockquote>
 <p>An electronic switch that uses digital logic is to be developed for
@@ -119,28 +119,30 @@ present. Light sensor goes HIGH when ambient light is inadequate.</p>
 - <code>l</code> = light sensor logic state
 - <code>t</code> = timer sensor logic state</p>
 <p><strong>Derived Boolean expression:</strong></p>
-<pre><code>s = p · l + t̄
+<pre><code>s = p Â· l + tÌ„
 </code></pre>
 <p>Reading it out: the lights switch ON (<code>s = 1</code>) if <strong>(people present AND
 light inadequate)</strong>, <strong>OR</strong> if the <strong>timer is NOT in the
-"daytime/gallery-open" window</strong> (i.e. it's night-time, per the 7 PM–6 AM
-rule, hence <code>t̄</code> — complement of the daytime timer signal).</p>
-<p>This is implemented as an <strong>AND gate</strong> (<code>p · l</code>) feeding into an <strong>OR
+"daytime/gallery-open" window</strong> (i.e. it's night-time, per the 7 PMâ€“6 AM
+rule, hence <code>tÌ„</code> â€” complement of the daytime timer signal).</p>
+<p>This is implemented as an <strong>AND gate</strong> (<code>p Â· l</code>) feeding into an <strong>OR
 gate</strong> together with the (inverted) timer signal.</p>
-<figure class="diagram"><img alt="Art-gallery logic design example, gate-level circuit" src="../../assets/img/logic-example.png"><figcaption>Art-gallery logic design example, gate-level circuit</figcaption></figure>
+<figure class="diagram"><img alt="Art-gallery logic design example, gate-level circuit" src="../assets/img/logic-example.png"><figcaption>Art-gallery logic design example, gate-level circuit</figcaption></figure>
 <h2 id="135-why-this-matters-for-the-course">13.5 Why this matters for the course</h2>
 <p>Boolean algebra and gate design are the bridge between <strong>sensor logic
-signals</strong> (each sensor reduces to a HIGH/LOW state after the ADC stage —
-see notes 01–02) and the <strong>ECU's digital decision-making</strong>. The art-gallery
+signals</strong> (each sensor reduces to a HIGH/LOW state after the ADC stage â€”
+see notes 01â€“02) and the <strong>ECU's digital decision-making</strong>. The art-gallery
 example is structurally identical to how a vehicle ECU might combine
 multiple sensor states (e.g. occupancy + ambient light + time) to decide
 an output action (turn on interior lighting), which is exactly the kind of
 logic block that eventually sits inside embedded automotive controllers.</p>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="12-digital-logic-gates.html">← Module 12: Digital Logic Gates</a><a class="next" href="14-power-electronics-thyristors.html">Module 14: Power Electronics →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="12-digital-logic-gates.html">â† Module 12: Digital Logic Gates</a><a class="next" href="14-power-electronics-thyristors.html">Module 14: Power Electronics â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

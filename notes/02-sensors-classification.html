@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 2: Sensor Classification · Autotronics Fundamentals</title>
+<title>Module 2: Sensor Classification Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,7 +39,7 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
@@ -73,11 +73,11 @@
 categories</strong> (the property of the material/component is exploited to build
 the sensor):</p>
 <ol>
-<li><strong>Resistive</strong> — potentiometers, voltage-divider based sensors, series &amp;
+<li><strong>Resistive</strong> â€” potentiometers, voltage-divider based sensors, series &amp;
    parallel resistor networks</li>
-<li><strong>Inductive</strong> — magnetic-field based; Hall-effect sensors are treated as
+<li><strong>Inductive</strong> â€” magnetic-field based; Hall-effect sensors are treated as
    a sub-case of inductive sensing</li>
-<li><strong>Capacitive</strong> — depends on voltage and the distance between plates;
+<li><strong>Capacitive</strong> â€” depends on voltage and the distance between plates;
    piezoelectric sensors are treated as a capacitive sub-case</li>
 </ol>
 <blockquote>
@@ -100,7 +100,7 @@ capacitive technology.</p>
 <li>Historically the terms are used interchangeably.</li>
 <li>Practically, a device like an <strong>LVDT (Linear Variable Differential
   Transformer)</strong> can, in principle, be read directly/mechanically (a
-  "screw-gauge"-like physical readout) — this is closer to what people
+  "screw-gauge"-like physical readout) â€” this is closer to what people
   originally meant by <em>transducer</em>.</li>
 <li>What this course calls a <strong>sensor</strong> always needs an <strong>electronic
   interface</strong>: you cannot read a value off it without processing an
@@ -110,7 +110,7 @@ capacitive technology.</p>
 definition used in the course.</p>
 <h2 id="25-amplitude-ranges-and-signal-conditioning-motivation">2.5 Amplitude ranges and signal conditioning motivation</h2>
 <ul>
-<li>Many raw sensor outputs are only <strong>millivolts or microvolts</strong> — too small
+<li>Many raw sensor outputs are only <strong>millivolts or microvolts</strong> â€” too small
   for the ECU to use directly, so they must be <strong>amplified</strong>.</li>
 <li>Some signals (e.g. <strong>engine knock</strong>) sit inside a noisy environment, so
   the true signal has to be <strong>filtered</strong> out of surrounding disturbance.</li>
@@ -120,30 +120,31 @@ definition used in the course.</p>
 </ul>
 <h2 id="26-the-complete-instrumentation-loop-repeated-for-emphasis">2.6 The complete instrumentation loop (repeated for emphasis)</h2>
 <pre><code>Measurable/measured quantity
-        │
-        ▼
+        â”‚
+        â–¼
      Sensor  (Resistive / Inductive / Capacitive)
-        │  (raw analog signal, may be mV–µV range, 0–5V typical after scaling)
-        ▼
+        â”‚  (raw analog signal, may be mVâ€“ÂµV range, 0â€“5V typical after scaling)
+        â–¼
  Signal Conditioning  (amplify / attenuate / filter noise)
-        │  (clean analog signal)
-        ▼
+        â”‚  (clean analog signal)
+        â–¼
       ADC   (Analog-to-Digital Converter)
-        │  (digital word)
-        ▼
+        â”‚  (digital word)
+        â–¼
       ECU
-        │  (digital output, if actuation needed)
-        ▼
+        â”‚  (digital output, if actuation needed)
+        â–¼
       DAC   (Digital-to-Analog Converter)
-        │
-        ▼
+        â”‚
+        â–¼
     Actuator
 </code></pre>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="01-systems-and-signal-flow.html">← Module 1: Systems &amp; Signal Flow</a><a class="next" href="03-voltage-and-current.html">Module 3: Voltage &amp; Current →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="01-systems-and-signal-flow.html">â† Module 1: Systems &amp; Signal Flow</a><a class="next" href="03-voltage-and-current.html">Module 3: Voltage &amp; Current â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 5: Capacitors · Autotronics Fundamentals</title>
+<title>Module 5: Capacitors Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,7 +39,7 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
@@ -48,67 +48,67 @@
 <h2 id="51-what-a-capacitor-is">5.1 What a capacitor is</h2>
 <p>A <strong>parallel-plate capacitor</strong> stores electric charge/field between two
 conductive plates separated by a dielectric.</p>
-<pre><code>A = πr²                         (plate area, for circular plates)
-C = Q / V           ⇒   Q = C·V
-C = ε·A / d
+<pre><code>A = Ï€rÂ²                         (plate area, for circular plates)
+C = Q / V           â‡’   Q = CÂ·V
+C = ÎµÂ·A / d
 </code></pre>
 <ul>
 <li><code>C</code> = capacitance (Farad)</li>
 <li><code>Q</code> = charge (Coulomb)</li>
 <li><code>V</code> = voltage (Volts)</li>
-<li><code>ε</code> (epsilon) = permittivity of the dielectric medium between the plates</li>
+<li><code>Îµ</code> (epsilon) = permittivity of the dielectric medium between the plates</li>
 <li><code>A</code> = plate area, <code>d</code> = distance between plates</li>
 </ul>
 <p>Current through a capacitor:</p>
-<pre><code>i(t) = C · dv/dt
+<pre><code>i(t) = C Â· dv/dt
 </code></pre>
 <p>Energy stored:</p>
-<pre><code>W = ½ · C · V²   (also written W = Q·V, worked as an equivalent check)
+<pre><code>W = Â½ Â· C Â· VÂ²   (also written W = QÂ·V, worked as an equivalent check)
 </code></pre>
-<figure class="diagram"><img alt="Capacitor structure and equations" src="../../assets/img/capacitor-basics.png"><figcaption>Capacitor structure and equations</figcaption></figure>
+<figure class="diagram"><img alt="Capacitor structure and equations" src="../assets/img/capacitor-basics.png"><figcaption>Capacitor structure and equations</figcaption></figure>
 <h3 id="worked-numeric-example-electrolytic-capacitor-vs-a-battery">Worked numeric example (electrolytic capacitor vs. a battery)</h3>
 <ul>
-<li>Example capacitor: 470 µF, 50 V, size ~16×35.5 mm →
-  <code>W = ½ × 470×10⁻⁶ × 50² = 0.58 J</code></li>
-<li>Example AAA battery: 1.225 V, 3600 C charge (1.15 Ah) →
-  <code>W = Q×V = 1.225 × 1.15 × 3600 ≈ 5071 J</code></li>
+<li>Example capacitor: 470 ÂµF, 50 V, size ~16Ã—35.5 mm â†’
+  <code>W = Â½ Ã— 470Ã—10â»â¶ Ã— 50Â² = 0.58 J</code></li>
+<li>Example AAA battery: 1.225 V, 3600 C charge (1.15 Ah) â†’
+  <code>W = QÃ—V = 1.225 Ã— 1.15 Ã— 3600 â‰ˆ 5071 J</code></li>
 </ul>
 <p>This comparison is a nice intuition-builder: <strong>a capacitor of reasonable
-physical size stores dramatically less energy than a small battery</strong> — a
+physical size stores dramatically less energy than a small battery</strong> â€” a
 capacitor is fast to charge/discharge but low-energy-density; a battery is
 the opposite.</p>
-<figure class="diagram"><img alt="Capacitor energy comparison" src="../../assets/img/capacitor-energy.png"><figcaption>Capacitor energy comparison</figcaption></figure>
+<figure class="diagram"><img alt="Capacitor energy comparison" src="../assets/img/capacitor-energy.png"><figcaption>Capacitor energy comparison</figcaption></figure>
 <h2 id="52-ohms-law-analogue-for-a-capacitor">5.2 Ohm's law analogue for a capacitor</h2>
-<pre><code>v_C(t) = (1/C) ∫ i dt          i(t) = C · dv/dt
+<pre><code>v_C(t) = (1/C) âˆ« i dt          i(t) = C Â· dv/dt
 </code></pre>
 <h3 id="two-key-behavioural-facts-repeated-for-emphasis">Two key behavioural facts (repeated for emphasis)</h3>
 <ol>
 <li><strong>A fully-charged capacitor acts as an open circuit</strong> (like the open
-   switch in note 03 §3.4 — infinite resistance, current stops).</li>
+   switch in note 03 Â§3.4 â€” infinite resistance, current stops).</li>
 <li><strong>Voltage across a capacitor cannot change instantaneously.</strong></li>
 </ol>
 <h3 id="ac-input-behaviour">AC input behaviour</h3>
-<p>For <code>v(t) = Vm sin(ωt)</code> applied to a capacitor, current <em>leads</em> voltage
+<p>For <code>v(t) = Vm sin(Ï‰t)</code> applied to a capacitor, current <em>leads</em> voltage
 (current builds first, tracks the derivative of a rising sine).</p>
 <h2 id="53-capacitors-in-series">5.3 Capacitors in Series</h2>
-<p>Mirror image of resistors — it is the <strong>reverse of the resistor rule</strong>:</p>
-<pre><code>1/C_eq = 1/C₁ + 1/C₂     ⇒     C_eq = C₁C₂ / (C₁ + C₂)
+<p>Mirror image of resistors â€” it is the <strong>reverse of the resistor rule</strong>:</p>
+<pre><code>1/C_eq = 1/Câ‚ + 1/Câ‚‚     â‡’     C_eq = Câ‚Câ‚‚ / (Câ‚ + Câ‚‚)
 </code></pre>
-<figure class="diagram"><img alt="Capacitors in series" src="../../assets/img/capacitors-series.png"><figcaption>Capacitors in series</figcaption></figure>
+<figure class="diagram"><img alt="Capacitors in series" src="../assets/img/capacitors-series.png"><figcaption>Capacitors in series</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> the instructor explicitly stated that voltage-division /
 current-division formulas (as used for resistor networks) are <strong>not</strong>
-generally applied to capacitor networks in this course — that concept is
+generally applied to capacitor networks in this course â€” that concept is
 limited to resistor networks.</p>
 </blockquote>
 <h2 id="54-capacitors-in-parallel">5.4 Capacitors in Parallel</h2>
-<pre><code>C_eq = C₁ + C₂
+<pre><code>C_eq = Câ‚ + Câ‚‚
 </code></pre>
-<figure class="diagram"><img alt="Capacitors in parallel" src="../../assets/img/capacitors-parallel.png"><figcaption>Capacitors in parallel</figcaption></figure>
+<figure class="diagram"><img alt="Capacitors in parallel" src="../assets/img/capacitors-parallel.png"><figcaption>Capacitors in parallel</figcaption></figure>
 <h2 id="55-capacitor-as-filter-noise-suppressor-automotive-application">5.5 Capacitor as filter / noise suppressor (automotive application)</h2>
 <ul>
 <li><strong>A capacitor blocks DC but passes AC.</strong> More precisely: it doesn't
-  literally "block" DC current in a mystical sense — under steady DC, the
+  literally "block" DC current in a mystical sense â€” under steady DC, the
   capacitor charges up and then behaves as an open circuit, so no
   steady-state current flows. Under AC, the capacitor keeps
   charging/discharging every half-cycle, so current appears to flow
@@ -120,13 +120,13 @@ limited to resistor networks.</p>
   electronics (amplifier/radio), while the DC supply itself passes through
   unaffected.</li>
 </ul>
-<pre><code>+12V battery/alternator ──┬──────────────► to Amplifier / Radio
-                            │
+<pre><code>+12V battery/alternator â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–º to Amplifier / Radio
+                            â”‚
                           [C] (noise-bypass capacitor)
-                            │
+                            â”‚
                            GND
 </code></pre>
-<figure class="diagram"><img alt="Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply" src="../../assets/img/capacitor-noise-suppressor.png"><figcaption>Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply</figcaption></figure>
+<figure class="diagram"><img alt="Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply" src="../assets/img/capacitor-noise-suppressor.png"><figcaption>Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply</figcaption></figure>
 <h2 id="56-summary-fully-charged-behaviour">5.6 Summary: Fully-charged behaviour</h2>
 <table>
 <thead>
@@ -151,9 +151,11 @@ limited to resistor networks.</p>
 </table>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="04-resistors-and-networks.html">← Module 4: Resistors &amp; Networks</a><a class="next" href="06-inductors-and-magnetism.html">Module 6: Inductors &amp; Magnetism →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="04-resistors-and-networks.html">â† Module 4: Resistors &amp; Networks</a><a class="next" href="06-inductors-and-magnetism.html">Module 6: Inductors &amp; Magnetism â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

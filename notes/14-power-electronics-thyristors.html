@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 14: Power Electronics · Autotronics Fundamentals</title>
+<title>Module 14: Power Electronics Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,101 +39,101 @@
 <li class="active"><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
     <article class="markdown-body">
-<h1 id="14-power-electronics-voltage-chopping-thyristors-triacs">14. Power Electronics — Voltage Chopping, Thyristors, Triacs</h1>
+<h1 id="14-power-electronics-voltage-chopping-thyristors-triacs">14. Power Electronics â€” Voltage Chopping, Thyristors, Triacs</h1>
 <h2 id="141-voltage-chopping-average-voltage-concept">14.1 Voltage chopping / average voltage concept</h2>
 <p>For a waveform made of many discrete instantaneous samples
-(<code>V₁, V₂, V₃, … Vn</code>) over one complete cycle, the <strong>average value</strong> is:</p>
-<pre><code>V_average = (V₁ + V₂ + V₃ + … + Vn) / n
+(<code>Vâ‚, Vâ‚‚, Vâ‚ƒ, â€¦ Vn</code>) over one complete cycle, the <strong>average value</strong> is:</p>
+<pre><code>V_average = (Vâ‚ + Vâ‚‚ + Vâ‚ƒ + â€¦ + Vn) / n
 </code></pre>
 <p>This concept underlies <strong>power control by chopping</strong>: instead of applying
 a full continuous voltage to a load, the supply is switched on/off (or
 partially conducted) at high frequency, and the <em>effective</em> (average)
 voltage delivered to the load is controlled by adjusting <strong>how much of
-each cycle the switch conducts</strong> — this is the conceptual basis of
+each cycle the switch conducts</strong> â€” this is the conceptual basis of
 <strong>PWM (Pulse Width Modulation)</strong>-style power control, and specifically of
 how <strong>thyristors/SCRs regulate AC power</strong> (below).</p>
-<figure class="diagram"><img alt="Voltage chopping waveform and average-voltage formula" src="../../assets/img/voltage-chopping.png"><figcaption>Voltage chopping waveform and average-voltage formula</figcaption></figure>
-<h2 id="142-thyristor-scr-silicon-controlled-rectifier">14.2 Thyristor (SCR — Silicon Controlled Rectifier)</h2>
+<figure class="diagram"><img alt="Voltage chopping waveform and average-voltage formula" src="../assets/img/voltage-chopping.png"><figcaption>Voltage chopping waveform and average-voltage formula</figcaption></figure>
+<h2 id="142-thyristor-scr-silicon-controlled-rectifier">14.2 Thyristor (SCR â€” Silicon Controlled Rectifier)</h2>
 <h3 id="structure-and-symbol">Structure and symbol</h3>
 <p>A 4-layer <strong>P-N-P-N</strong> device with three terminals:</p>
 <ul>
 <li><strong>Anode (A)</strong></li>
 <li><strong>Cathode (K)</strong></li>
-<li><strong>Gate (G)</strong> — the control terminal</li>
+<li><strong>Gate (G)</strong> â€” the control terminal</li>
 </ul>
-<pre><code>Anode ──[P-N-P-N]── Cathode
-                │
+<pre><code>Anode â”€â”€[P-N-P-N]â”€â”€ Cathode
+                â”‚
               Gate
 </code></pre>
-<h3 id="iv-characteristic-four-quadrant-behaviour">I–V characteristic (four-quadrant behaviour)</h3>
+<h3 id="iv-characteristic-four-quadrant-behaviour">Iâ€“V characteristic (four-quadrant behaviour)</h3>
 <ul>
 <li><strong>Forward blocking region:</strong> with no gate trigger, the SCR blocks
-  forward current even though it's forward-biased (anode +, cathode −) —
+  forward current even though it's forward-biased (anode +, cathode âˆ’) â€”
   it behaves like an open switch until triggered.</li>
 <li><strong>Forward "knee"/breakover:</strong> once triggered by a <strong>gate pulse</strong>, or if
   the forward voltage exceeds the breakover voltage, the SCR switches into
-  conduction — a low-resistance <strong>ON state</strong>, and it will continue
+  conduction â€” a low-resistance <strong>ON state</strong>, and it will continue
   conducting (<strong>latches</strong>) even if the gate signal is removed, as long as
   current stays above the <strong>holding current</strong>.</li>
-<li><strong>Reverse blocking region:</strong> with reverse voltage applied (anode −,
+<li><strong>Reverse blocking region:</strong> with reverse voltage applied (anode âˆ’,
   cathode +), the SCR blocks current entirely (like a reverse-biased
   diode), up to its <strong>reverse breakdown voltage</strong>.</li>
 </ul>
-<figure class="diagram"><img alt="Thyristor structure, symbol, and I-V characteristic curve" src="../../assets/img/thyristor-1.png"><figcaption>Thyristor structure, symbol, and I-V characteristic curve</figcaption></figure>
+<figure class="diagram"><img alt="Thyristor structure, symbol, and I-V characteristic curve" src="../assets/img/thyristor-1.png"><figcaption>Thyristor structure, symbol, and I-V characteristic curve</figcaption></figure>
 <h3 id="how-its-used-to-control-ac-power-delivered-to-a-load">How it's used to control AC power delivered to a load</h3>
-<pre><code>VAC ──┬── R_D (180 Ω) ── [SCR] ── R_LAMP LOAD
-      │
-     R_GK (1 kΩ) — sets gate trigger threshold
-      │
-   Gate Trigger Pulse (applied at a controllable phase angle θ)
+<pre><code>VAC â”€â”€â”¬â”€â”€ R_D (180 Î©) â”€â”€ [SCR] â”€â”€ R_LAMP LOAD
+      â”‚
+     R_GK (1 kÎ©) â€” sets gate trigger threshold
+      â”‚
+   Gate Trigger Pulse (applied at a controllable phase angle Î¸)
 </code></pre>
-<p>By <strong>delaying the gate trigger pulse</strong> to a later point (<code>θ₁</code>, <code>θ₂</code>, <code>θ₃</code>
-…) within each positive half-cycle of the AC waveform, the SCR conducts for
-a <strong>shorter or longer portion of that half-cycle</strong> — this is called
+<p>By <strong>delaying the gate trigger pulse</strong> to a later point (<code>Î¸â‚</code>, <code>Î¸â‚‚</code>, <code>Î¸â‚ƒ</code>
+â€¦) within each positive half-cycle of the AC waveform, the SCR conducts for
+a <strong>shorter or longer portion of that half-cycle</strong> â€” this is called
 <strong>phase-angle control</strong>.</p>
 <blockquote>
 <p>"By accurately varying the timing relationship between the Gate pulse
 and the positive half-cycle, the Thyristor could be made to supply any
 percentage of power desired to the load, between 0% and 50%."</p>
 </blockquote>
-<p>(An ordinary single SCR conducts on only one half-cycle of the AC wave —
+<p>(An ordinary single SCR conducts on only one half-cycle of the AC wave â€”
 hence the practical control range is bounded at 50% of full-wave power; a
-pair of SCRs, or a Triac, is used to control both halves — see below.)</p>
-<figure class="diagram"><img alt="Thyristor phase-control conduction diagram and gate trigger circuit" src="../../assets/img/thyristor-2.png"><figcaption>Thyristor phase-control conduction diagram and gate trigger circuit</figcaption></figure>
+pair of SCRs, or a Triac, is used to control both halves â€” see below.)</p>
+<figure class="diagram"><img alt="Thyristor phase-control conduction diagram and gate trigger circuit" src="../assets/img/thyristor-2.png"><figcaption>Thyristor phase-control conduction diagram and gate trigger circuit</figcaption></figure>
 <h2 id="143-triac">14.3 Triac</h2>
 <p>A <strong>Triac</strong> can be understood as <strong>two SCRs connected in inverse-parallel
-(anti-parallel)</strong>, sharing a common gate — this lets it conduct current
+(anti-parallel)</strong>, sharing a common gate â€” this lets it conduct current
 <strong>in both directions</strong>, unlike a single SCR which only conducts one way.</p>
 <h3 id="structure-and-terminals">Structure and terminals</h3>
 <pre><code>MT2 (Main Terminal 2)
-   │
+   â”‚
  [P-N-P-N / N-P-N-P layered structure]
-   │
+   â”‚
 MT1 (Main Terminal 1)
-   │
+   â”‚
  Gate
 </code></pre>
 <p>Because it can control both the positive and negative half-cycles of an AC
 waveform (via phase-angle triggering, same principle as the SCR), a Triac
-can control power across the <strong>full 0–100%</strong> range of the AC waveform — it
+can control power across the <strong>full 0â€“100%</strong> range of the AC waveform â€” it
 is the standard device behind household and automotive <strong>AC dimmer/speed
 controllers</strong>.</p>
-<figure class="diagram"><img alt="Triac structure and equivalence to two anti-parallel SCRs" src="../../assets/img/triac.png"><figcaption>Triac structure and equivalence to two anti-parallel SCRs</figcaption></figure>
+<figure class="diagram"><img alt="Triac structure and equivalence to two anti-parallel SCRs" src="../assets/img/triac.png"><figcaption>Triac structure and equivalence to two anti-parallel SCRs</figcaption></figure>
 <h2 id="144-where-this-fits-in-the-course">14.4 Where this fits in the course</h2>
 <p>This module is the practical payoff of the <strong>"semiconductor switches"</strong>
-item on the fundamentals checklist from note <code>00-overview.md</code> — thyristors
+item on the fundamentals checklist from note <code>00-overview.md</code> â€” thyristors
 and triacs are the <strong>power-conversion class</strong> of semiconductor switch
 (as opposed to BJTs/MOSFETs used mainly for logic-level switching and
 signal amplification). They are the components that let a low-power
-digital control signal (a gate pulse) govern a much larger AC power flow —
+digital control signal (a gate pulse) govern a much larger AC power flow â€”
 e.g. motor speed controllers, dimmers, and soft-start circuits in
 automotive and industrial systems.</p>
-<h2 id="145-quick-comparison-bjtmosfet-vs-thyristortriac">14.5 Quick comparison — BJT/MOSFET vs Thyristor/Triac</h2>
+<h2 id="145-quick-comparison-bjtmosfet-vs-thyristortriac">14.5 Quick comparison â€” BJT/MOSFET vs Thyristor/Triac</h2>
 <table>
 <thead>
 <tr>
@@ -153,7 +153,7 @@ automotive and industrial systems.</p>
 <tr>
 <td>Turn-off</td>
 <td>Removing base/gate drive turns it off</td>
-<td><strong>Latches ON</strong> — needs current to drop below holding current to turn off</td>
+<td><strong>Latches ON</strong> â€” needs current to drop below holding current to turn off</td>
 <td>Same latching behaviour, both directions</td>
 </tr>
 <tr>
@@ -172,9 +172,11 @@ automotive and industrial systems.</p>
 </table>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="13-boolean-algebra.html">← Module 13: Boolean Algebra</a></div>
+      <div class="pagenav-inner"><a class="prev" href="13-boolean-algebra.html">â† Module 13: Boolean Algebra</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

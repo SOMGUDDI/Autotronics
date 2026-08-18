@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 4: Resistors & Networks · Autotronics Fundamentals</title>
+<title>Module 4: Resistors & Networks Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,7 +39,7 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
@@ -47,19 +47,19 @@
 <h1 id="4-resistors-resistor-networks">4. Resistors &amp; Resistor Networks</h1>
 <h2 id="41-resistor-basics">4.1 Resistor basics</h2>
 <p>A <strong>resistor</strong> is a <strong>dissipative element</strong> that converts electrical
-energy into heat. Ohm's Law defines its V–I characteristic:</p>
+energy into heat. Ohm's Law defines its Vâ€“I characteristic:</p>
 <pre><code>V = IR
-R = ρL / A
+R = ÏL / A
 </code></pre>
 <ul>
-<li><code>ρ</code> (rho) = specific resistivity of the material</li>
+<li><code>Ï</code> (rho) = specific resistivity of the material</li>
 <li><code>L</code> = length, <code>A</code> = cross-sectional area</li>
 </ul>
 <h3 id="resistor-colour-code">Resistor colour code</h3>
 <p>4-band and 5-band resistor colour codes are used to read off resistance
 value + tolerance. Worked example on the slide: bands <strong>Green (5), Blue
-(6), Red (×100)</strong> → <code>5 6 × 10² = 5600 Ω</code> (also written as <code>56 × 10 = 560 Ω</code>
-in the simpler annotation — check the physical resistor's actual band
+(6), Red (Ã—100)</strong> â†’ <code>5 6 Ã— 10Â² = 5600 Î©</code> (also written as <code>56 Ã— 10 = 560 Î©</code>
+in the simpler annotation â€” check the physical resistor's actual band
 count/colour against the chart below).</p>
 <table>
 <thead>
@@ -74,113 +74,113 @@ count/colour against the chart below).</p>
 <tr>
 <td>Black</td>
 <td>0</td>
-<td>×1</td>
-<td>—</td>
+<td>Ã—1</td>
+<td>â€”</td>
 </tr>
 <tr>
 <td>Brown</td>
 <td>1</td>
-<td>×10</td>
-<td>±1% (F)</td>
+<td>Ã—10</td>
+<td>Â±1% (F)</td>
 </tr>
 <tr>
 <td>Red</td>
 <td>2</td>
-<td>×100</td>
-<td>±2% (G)</td>
+<td>Ã—100</td>
+<td>Â±2% (G)</td>
 </tr>
 <tr>
 <td>Orange</td>
 <td>3</td>
-<td>×1k</td>
-<td>—</td>
+<td>Ã—1k</td>
+<td>â€”</td>
 </tr>
 <tr>
 <td>Yellow</td>
 <td>4</td>
-<td>×10k</td>
-<td>—</td>
+<td>Ã—10k</td>
+<td>â€”</td>
 </tr>
 <tr>
 <td>Green</td>
 <td>5</td>
-<td>×100k</td>
-<td>±0.5% (D)</td>
+<td>Ã—100k</td>
+<td>Â±0.5% (D)</td>
 </tr>
 <tr>
 <td>Blue</td>
 <td>6</td>
-<td>×1M</td>
-<td>±0.25% (C)</td>
+<td>Ã—1M</td>
+<td>Â±0.25% (C)</td>
 </tr>
 <tr>
 <td>Violet</td>
 <td>7</td>
-<td>×10M</td>
-<td>±0.1% (B)</td>
+<td>Ã—10M</td>
+<td>Â±0.1% (B)</td>
 </tr>
 <tr>
 <td>Grey</td>
 <td>8</td>
-<td>—</td>
-<td>±0.05%</td>
+<td>â€”</td>
+<td>Â±0.05%</td>
 </tr>
 <tr>
 <td>White</td>
 <td>9</td>
-<td>—</td>
-<td>—</td>
+<td>â€”</td>
+<td>â€”</td>
 </tr>
 <tr>
 <td>Gold</td>
-<td>—</td>
-<td>×0.1</td>
-<td>±5% (J)</td>
+<td>â€”</td>
+<td>Ã—0.1</td>
+<td>Â±5% (J)</td>
 </tr>
 <tr>
 <td>Silver</td>
-<td>—</td>
-<td>×0.01</td>
-<td>±10% (K)</td>
+<td>â€”</td>
+<td>Ã—0.01</td>
+<td>Â±10% (K)</td>
 </tr>
 </tbody>
 </table>
-<figure class="diagram"><img alt="Resistor and colour code chart" src="../../assets/img/resistor-colorcode.png"><figcaption>Resistor and colour code chart</figcaption></figure>
-<h2 id="42-resistors-in-series-the-voltage-divider">4.2 Resistors in Series — the Voltage Divider</h2>
+<figure class="diagram"><img alt="Resistor and colour code chart" src="../assets/img/resistor-colorcode.png"><figcaption>Resistor and colour code chart</figcaption></figure>
+<h2 id="42-resistors-in-series-the-voltage-divider">4.2 Resistors in Series â€” the Voltage Divider</h2>
 <p>When resistors are connected <strong>in series</strong> to a battery:</p>
 <ul>
 <li><strong>Same current</strong> flows through both.</li>
-<li><strong>Voltage divides</strong>: <code>ΔV = ΔV₁ + ΔV₂</code></li>
-<li><strong>Equivalent resistance:</strong> <code>R_eq = R₁ + R₂</code></li>
+<li><strong>Voltage divides</strong>: <code>Î”V = Î”Vâ‚ + Î”Vâ‚‚</code></li>
+<li><strong>Equivalent resistance:</strong> <code>R_eq = Râ‚ + Râ‚‚</code></li>
 </ul>
-<p>This is called a <strong>voltage divider network</strong> — you can chain as many
+<p>This is called a <strong>voltage divider network</strong> â€” you can chain as many
 resistors as needed to split a total voltage into whatever proportions you
 want.</p>
-<figure class="diagram"><img alt="Resistors in series" src="../../assets/img/resistors-series.png"><figcaption>Resistors in series</figcaption></figure>
+<figure class="diagram"><img alt="Resistors in series" src="../assets/img/resistors-series.png"><figcaption>Resistors in series</figcaption></figure>
 <h3 id="general-voltage-divider-formula">General voltage divider formula</h3>
-<pre><code>V_out = V_in · R₂ / (R₁ + R₂)
+<pre><code>V_out = V_in Â· Râ‚‚ / (Râ‚ + Râ‚‚)
 </code></pre>
-<p>Also written per-resistor: <code>V_R1 = V·R₁/(R₁+R₂)</code>, and Ohm's-law form
-<code>V/I = R₁ + R₂ = R_eq</code>.</p>
-<h2 id="43-resistors-in-parallel-the-current-divider">4.3 Resistors in Parallel — the Current Divider</h2>
+<p>Also written per-resistor: <code>V_R1 = VÂ·Râ‚/(Râ‚+Râ‚‚)</code>, and Ohm's-law form
+<code>V/I = Râ‚ + Râ‚‚ = R_eq</code>.</p>
+<h2 id="43-resistors-in-parallel-the-current-divider">4.3 Resistors in Parallel â€” the Current Divider</h2>
 <p>When resistors are connected <strong>in parallel</strong>:</p>
 <ul>
 <li><strong>Same voltage</strong> appears across both: <code>V_R1 = V_R2 = V</code></li>
-<li><strong>Total current divides</strong>: <code>I = I₁ + I₂</code></li>
-<li><strong>Equivalent resistance:</strong> <code>1/R_eq = 1/R₁ + 1/R₂</code>, i.e.
-  <code>R_eq = R₁R₂ / (R₁ + R₂)</code></li>
+<li><strong>Total current divides</strong>: <code>I = Iâ‚ + Iâ‚‚</code></li>
+<li><strong>Equivalent resistance:</strong> <code>1/R_eq = 1/Râ‚ + 1/Râ‚‚</code>, i.e.
+  <code>R_eq = Râ‚Râ‚‚ / (Râ‚ + Râ‚‚)</code></li>
 </ul>
 <p>This is called a <strong>current divider network</strong>.</p>
-<figure class="diagram"><img alt="Resistors in parallel" src="../../assets/img/resistors-parallel.png"><figcaption>Resistors in parallel</figcaption></figure>
+<figure class="diagram"><img alt="Resistors in parallel" src="../assets/img/resistors-parallel.png"><figcaption>Resistors in parallel</figcaption></figure>
 <h3 id="current-division-derivation-from-class">Current-division derivation (from class)</h3>
-<pre><code>I = I₁ + I₂ = V/R₁ + V/R₂ = V(1/R₁ + 1/R₂)
-V/I = 1 / (1/R₁ + 1/R₂) = R₁R₂/(R₁+R₂)   ← this is R_eq for parallel R
+<pre><code>I = Iâ‚ + Iâ‚‚ = V/Râ‚ + V/Râ‚‚ = V(1/Râ‚ + 1/Râ‚‚)
+V/I = 1 / (1/Râ‚ + 1/Râ‚‚) = Râ‚Râ‚‚/(Râ‚+Râ‚‚)   â† this is R_eq for parallel R
 </code></pre>
-<p><img alt="Voltage/current division board work" src="../../assets/img/voltage-current-division.png" />
-<img alt="Current division derivation" src="../../assets/img/current-division.png" /></p>
-<h2 id="44-voltage-divider-circuit-worked-light-sensor-example">4.4 Voltage divider circuit — worked light-sensor example</h2>
+<p><img alt="Voltage/current division board work" src="../assets/img/voltage-current-division.png" />
+<img alt="Current division derivation" src="../assets/img/current-division.png" /></p>
+<h2 id="44-voltage-divider-circuit-worked-light-sensor-example">4.4 Voltage divider circuit â€” worked light-sensor example</h2>
 <p>A <strong>light-dependent resistor (LDR)</strong> used as <code>R2</code> (sensor) in series with a
-fixed <code>R1 = 5.6 kΩ</code>, forming a light-level detector:</p>
+fixed <code>R1 = 5.6 kÎ©</code>, forming a light-level detector:</p>
 <table>
 <thead>
 <tr>
@@ -194,22 +194,22 @@ fixed <code>R1 = 5.6 kΩ</code>, forming a light-level detector:</p>
 <tbody>
 <tr>
 <td>Light</td>
-<td>1 kΩ</td>
-<td>5.6 kΩ</td>
+<td>1 kÎ©</td>
+<td>5.6 kÎ©</td>
 <td>0.15</td>
 <td>0.76 V</td>
 </tr>
 <tr>
 <td>Dim</td>
-<td>7 kΩ</td>
-<td>5.6 kΩ</td>
+<td>7 kÎ©</td>
+<td>5.6 kÎ©</td>
 <td>0.56</td>
 <td>2.78 V</td>
 </tr>
 <tr>
 <td>Dark</td>
-<td>10 kΩ</td>
-<td>5.6 kΩ</td>
+<td>10 kÎ©</td>
+<td>5.6 kÎ©</td>
 <td>0.67</td>
 <td>3.21 V</td>
 </tr>
@@ -219,9 +219,9 @@ fixed <code>R1 = 5.6 kΩ</code>, forming a light-level detector:</p>
 current flow</em>. As it gets darker, the LDR's resistance increases, and
 (because it's on the numerator side of this particular divider) <code>V_out</code>
 increases too. This exact voltage-divider pattern is the working principle
-behind the <strong>Throttle Position Sensor (TPS)</strong> — a potentiometer is nothing
+behind the <strong>Throttle Position Sensor (TPS)</strong> â€” a potentiometer is nothing
 but a voltage divider with a moving wiper.</p>
-<figure class="diagram"><img alt="Voltage divider circuit and light-level table" src="../../assets/img/voltage-divider-1.png"><figcaption>Voltage divider circuit and light-level table</figcaption></figure>
+<figure class="diagram"><img alt="Voltage divider circuit and light-level table" src="../assets/img/voltage-divider-1.png"><figcaption>Voltage divider circuit and light-level table</figcaption></figure>
 <h3 id="led-series-resistor-design-problem-homework-style">LED series-resistor design problem (homework style)</h3>
 <blockquote>
 <p>An amber LED with forward voltage drop <code>V_F = 2 V</code> is connected to a
@@ -229,19 +229,19 @@ but a voltage divider with a moving wiper.</p>
 limit forward current to under 10 mA.</p>
 </blockquote>
 <p>Set-up: <code>I_R = I_F</code> (same current through R and LED, series circuit).
-Using <code>V_S = I_F·R_S + V_F</code> ⇒ solve for <code>R_S</code> given <code>I_F &lt; 10 mA</code>.</p>
+Using <code>V_S = I_FÂ·R_S + V_F</code> â‡’ solve for <code>R_S</code> given <code>I_F &lt; 10 mA</code>.</p>
 <p>(Board annotation for a related divider example: <code>V_O = 0.76 V</code>,
-<code>V_in = 3.3 V</code>, ratio <code>R2/(R1+R2)</code> — used in the context of a
+<code>V_in = 3.3 V</code>, ratio <code>R2/(R1+R2)</code> â€” used in the context of a
 capacitive-touch / window-switch MCU circuit shown alongside.)</p>
-<figure class="diagram"><img alt="LED voltage divider + example circuit" src="../../assets/img/voltage-divider-led.png"><figcaption>LED voltage divider + example circuit</figcaption></figure>
-<h3 id="real-automotive-application-blower-motor-resistor-pack">Real automotive application — blower motor resistor pack</h3>
+<figure class="diagram"><img alt="LED voltage divider + example circuit" src="../assets/img/voltage-divider-led.png"><figcaption>LED voltage divider + example circuit</figcaption></figure>
+<h3 id="real-automotive-application-blower-motor-resistor-pack">Real automotive application â€” blower motor resistor pack</h3>
 <p>A classic <strong>series resistor network as a fan-speed selector</strong>: the blower
 motor's Low/Medium/High speeds are selected by routing battery current
 through different combinations of resistors (R1, R2, R3) before the motor,
-using a fan control switch. Fewer resistors in the path ⇒ less voltage
-drop ⇒ higher motor speed.</p>
-<figure class="diagram"><img alt="Blower motor resistor voltage-divider application" src="../../assets/img/voltage-divider-blower.png"><figcaption>Blower motor resistor voltage-divider application</figcaption></figure>
-<h2 id="45-series-vs-parallel-quick-summary">4.5 Series vs Parallel — quick summary</h2>
+using a fan control switch. Fewer resistors in the path â‡’ less voltage
+drop â‡’ higher motor speed.</p>
+<figure class="diagram"><img alt="Blower motor resistor voltage-divider application" src="../assets/img/voltage-divider-blower.png"><figcaption>Blower motor resistor voltage-divider application</figcaption></figure>
+<h2 id="45-series-vs-parallel-quick-summary">4.5 Series vs Parallel â€” quick summary</h2>
 <table>
 <thead>
 <tr>
@@ -268,16 +268,18 @@ drop ⇒ higher motor speed.</p>
 </tr>
 <tr>
 <td>R_eq</td>
-<td>R₁ + R₂</td>
-<td>R₁R₂/(R₁+R₂)</td>
+<td>Râ‚ + Râ‚‚</td>
+<td>Râ‚Râ‚‚/(Râ‚+Râ‚‚)</td>
 </tr>
 </tbody>
 </table>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="03-voltage-and-current.html">← Module 3: Voltage &amp; Current</a><a class="next" href="05-capacitors.html">Module 5: Capacitors →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="03-voltage-and-current.html">â† Module 3: Voltage &amp; Current</a><a class="next" href="05-capacitors.html">Module 5: Capacitors â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

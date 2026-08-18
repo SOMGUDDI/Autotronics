@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 10: Diodes & Applications · Autotronics Fundamentals</title>
+<title>Module 10: Diodes & Applications Â· Autotronics Fundamentals</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,13 +13,13 @@
   <aside class="sidebar">
     <div class="sidebar-head">
       <a href="../index.html" class="logo">
-        <span class="logo-mark">⏚</span>
+        <span class="logo-mark">âš</span>
         <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
       </a>
     </div>
     <nav>
       <ul class="nav-list">
-        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+        <li class=""><a href="../index.html"><span class="pin">â—‰</span>Course Map</a></li>
       </ul>
       <div class="nav-divider">MODULES</div>
       <ul class="nav-list">
@@ -39,38 +39,38 @@
 <li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
       </ul>
     </nav>
-    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+    <div class="sidebar-foot">L2 &amp; L3 Â· Dr. Madhuri Bayya<br>BITS Pilani Â· AEZG533/AELZG533</div>
   </aside>
   <main class="content">
     <div class="trace-rule"></div>
     <article class="markdown-body">
 <h1 id="10-diodes-applications">10. Diodes &amp; Applications</h1>
 <h2 id="101-diode-basics">10.1 Diode basics</h2>
-<p>A <strong>diode</strong> is a single P–N junction packaged with two terminals:</p>
+<p>A <strong>diode</strong> is a single Pâ€“N junction packaged with two terminals:</p>
 <ul>
-<li><strong>Anode</strong> — the P side</li>
-<li><strong>Cathode</strong> — the N side (marked with a band on the physical component)</li>
+<li><strong>Anode</strong> â€” the P side</li>
+<li><strong>Cathode</strong> â€” the N side (marked with a band on the physical component)</li>
 </ul>
-<pre><code>Anode ──►|── Cathode        (arrow points in the direction conventional
-                              current can easily flow — anode to cathode)
+<pre><code>Anode â”€â”€â–º|â”€â”€ Cathode        (arrow points in the direction conventional
+                              current can easily flow â€” anode to cathode)
 </code></pre>
 <p>Circuit: source <code>V_S</code> in series with resistor <code>R</code> and diode, output
 <code>V_D</code> across the diode.</p>
-<figure class="diagram"><img alt="Diode structure, symbol, and circuit" src="../../assets/img/diode-basics.png"><figcaption>Diode structure, symbol, and circuit</figcaption></figure>
-<h3 id="diode-iv-characteristic">Diode I–V characteristic</h3>
+<figure class="diagram"><img alt="Diode structure, symbol, and circuit" src="../assets/img/diode-basics.png"><figcaption>Diode structure, symbol, and circuit</figcaption></figure>
+<h3 id="diode-iv-characteristic">Diode Iâ€“V characteristic</h3>
 <ul>
 <li><strong>Forward region:</strong> once <code>V_D</code> exceeds the <strong>knee voltage (~0.7 V for
   silicon)</strong>, forward current rises steeply (large current for small
   further voltage increase).</li>
-<li><strong>Reverse region:</strong> only a tiny <strong>reverse current</strong> (µA range) flows,
+<li><strong>Reverse region:</strong> only a tiny <strong>reverse current</strong> (ÂµA range) flows,
   essentially constant, until...</li>
 <li><strong>Breakdown region:</strong> beyond the breakdown voltage, reverse current
   increases sharply (this is destructive for ordinary diodes, but is
-  exploited deliberately in Zener diodes — not covered in this lecture).</li>
+  exploited deliberately in Zener diodes â€” not covered in this lecture).</li>
 </ul>
 <p><strong>Ideal switch model recap:</strong>
-- Diode forward-biased ("ON") → acts like a closed switch.
-- Diode reverse-biased ("OFF") → acts like an open switch.</p>
+- Diode forward-biased ("ON") â†’ acts like a closed switch.
+- Diode reverse-biased ("OFF") â†’ acts like an open switch.</p>
 <h2 id="102-ideal-practical-diode-states">10.2 Ideal / practical diode states</h2>
 <table>
 <thead>
@@ -85,78 +85,80 @@
 <tr>
 <td>Ideal, forward</td>
 <td>Short (closed switch)</td>
-<td>≈ 0 V</td>
+<td>â‰ˆ 0 V</td>
 <td>Flows freely</td>
 </tr>
 <tr>
 <td>Ideal, reverse</td>
 <td>Open (open switch)</td>
 <td>Full applied V</td>
-<td>≈ 0 A</td>
+<td>â‰ˆ 0 A</td>
 </tr>
 <tr>
 <td>Practical, forward (&lt; knee)</td>
 <td>Open</td>
 <td>&lt; 0.7 V</td>
-<td>≈ 0 A</td>
+<td>â‰ˆ 0 A</td>
 </tr>
 <tr>
-<td>Practical, forward (≥ knee)</td>
+<td>Practical, forward (â‰¥ knee)</td>
 <td>Conducting</td>
-<td>≈ 0.7 V (silicon)</td>
+<td>â‰ˆ 0.7 V (silicon)</td>
 <td>Rises steeply</td>
 </tr>
 </tbody>
 </table>
-<figure class="diagram"><img alt="Ideal diode states — forward/reverse, open/closed" src="../../assets/img/diode-waveforms.png"><figcaption>Ideal diode states — forward/reverse, open/closed</figcaption></figure>
-<h2 id="103-diode-as-a-rectifier-ac-to-dc">10.3 Diode as a rectifier — AC to DC</h2>
+<figure class="diagram"><img alt="Ideal diode states â€” forward/reverse, open/closed" src="../assets/img/diode-waveforms.png"><figcaption>Ideal diode states â€” forward/reverse, open/closed</figcaption></figure>
+<h2 id="103-diode-as-a-rectifier-ac-to-dc">10.3 Diode as a rectifier â€” AC to DC</h2>
 <p>An AC input through a diode: the diode only conducts during the half-cycle
 where it is forward-biased, so a resistor load <code>R</code> sees only the positive
 (or negative, depending on orientation) half of the input waveform.</p>
-<pre><code>AC Input  →  [Diode]  →  Half-wave rectified output across R
+<pre><code>AC Input  â†’  [Diode]  â†’  Half-wave rectified output across R
 </code></pre>
 <p>The output waveform is the <strong>input waveform's positive half only</strong>, with
-the negative half clipped to (approximately) zero — this is <strong>half-wave
-rectification</strong>, the simplest form of AC→DC conversion.</p>
-<h2 id="104-automotive-application-alternator-charging-circuit">10.4 Automotive application — Alternator charging circuit</h2>
+the negative half clipped to (approximately) zero â€” this is <strong>half-wave
+rectification</strong>, the simplest form of ACâ†’DC conversion.</p>
+<h2 id="104-automotive-application-alternator-charging-circuit">10.4 Automotive application â€” Alternator charging circuit</h2>
 <p>A <strong>typical alternator circuit</strong>:</p>
-<pre><code>Rotor (field coils, via slip rings) → Stator (3-phase windings)
-        → Rectifier (diode trio / diode bridge) → B (to Battery +)
-        → Voltage Regulator → F (field), IG (to Ignition switch),
+<pre><code>Rotor (field coils, via slip rings) â†’ Stator (3-phase windings)
+        â†’ Rectifier (diode trio / diode bridge) â†’ B (to Battery +)
+        â†’ Voltage Regulator â†’ F (field), IG (to Ignition switch),
           S (to Battery +, sense)
 </code></pre>
 <ul>
 <li>The <strong>rotor</strong> is an electromagnet spun by the engine (via belt), carrying
   field current through <strong>slip rings and carbon brushes</strong>.</li>
 <li>The <strong>stator</strong> windings (fixed) have an AC voltage induced in them as the
-  rotor's magnetic field sweeps past (generator action — see note 06 §6.5,
+  rotor's magnetic field sweeps past (generator action â€” see note 06 Â§6.5,
   fact #4).</li>
 <li>A <strong>diode trio / rectifier bridge</strong> converts this 3-phase AC output to
   <strong>pulsating DC</strong>.</li>
 <li>The <strong>voltage regulator</strong> controls rotor field current to hold the
   charging voltage roughly constant regardless of engine RPM.</li>
 </ul>
-<figure class="diagram"><img alt="Typical alternator circuit — rotor, stator, rectifier, regulator" src="../../assets/img/alternator-charging.png"><figcaption>Typical alternator circuit — rotor, stator, rectifier, regulator</figcaption></figure>
+<figure class="diagram"><img alt="Typical alternator circuit â€” rotor, stator, rectifier, regulator" src="../assets/img/alternator-charging.png"><figcaption>Typical alternator circuit â€” rotor, stator, rectifier, regulator</figcaption></figure>
 <p><strong>Waveform note (from board annotation):</strong> the rectified alternator output
-is not smooth DC — it's <strong>pulsating DC</strong>, with ripple at multiples of the
+is not smooth DC â€” it's <strong>pulsating DC</strong>, with ripple at multiples of the
 AC frequency; smoothing (via capacitors, or relying on battery buffering)
 is what makes it usable as a steady charging source.</p>
-<h2 id="105-diode-summary-key-facts-to-remember">10.5 Diode summary — key facts to remember</h2>
+<h2 id="105-diode-summary-key-facts-to-remember">10.5 Diode summary â€” key facts to remember</h2>
 <ul>
 <li>A diode conducts (forward biased) when <strong>anode is more positive than
   cathode by at least the knee voltage</strong> (~0.7 V for silicon, ~0.3 V for
-  germanium — not covered here but a common comparison point).</li>
+  germanium â€” not covered here but a common comparison point).</li>
 <li>A diode blocks (reverse biased) when the cathode is more positive than
-  the anode — until its reverse breakdown voltage is exceeded.</li>
+  the anode â€” until its reverse breakdown voltage is exceeded.</li>
 <li>The <strong>rectifier</strong> function (converting AC to pulsating DC) is the basis
   of automotive <strong>alternator charging systems</strong> and general AC-to-DC power
   supplies.</li>
 </ul>
     </article>
     <div class="pagenav">
-      <div class="pagenav-inner"><a class="prev" href="09-semiconductor-basics.html">← Module 9: Semiconductor Basics</a><a class="next" href="11-transistors-bjt-mosfet.html">Module 11: Transistors: BJT &amp; MOSFET →</a></div>
+      <div class="pagenav-inner"><a class="prev" href="09-semiconductor-basics.html">â† Module 9: Semiconductor Basics</a><a class="next" href="11-transistors-bjt-mosfet.html">Module 11: Transistors: BJT &amp; MOSFET â†’</a></div>
     </div>
   </main>
 </div>
 </body>
 </html>
+
+

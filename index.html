@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Map · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class="active"><a href="index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="autotronics-electrical-electronics-fundamentals">Autotronics — Electrical &amp; Electronics Fundamentals</h1>
+<p><strong>Course:</strong> AELZG533 / AEZG533 — Autotronics
+<strong>Instructor:</strong> Dr. Madhuri Bayya, BITS Pilani (Engineering Group)
+<strong>Session covered:</strong> L2 &amp; L3 — <em>Electrical and Electronics Fundamentals</em> (9 Aug 26)
+<strong>Source material:</strong> Lecture slide deck (117 slides, with in-class handwritten annotations) + full class transcript/recording</p>
+<hr />
+<h2 id="why-this-lecture-exists">Why this lecture exists</h2>
+<p>Before the course can talk about specific automotive subsystems (engine
+control, braking, EV powertrain, comfort/safety systems), everyone in the
+class — mechanical or electrical background — needs a <strong>common electrical
+and electronics vocabulary</strong>. This lecture builds that vocabulary from the
+ground up, and it does so in a very deliberate order:</p>
+<pre><code>Engine subsystem example
+        │
+        ▼
+What sensors does it need?
+        │
+        ▼
+What technology does each sensor use?  (Resistive / Inductive / Capacitive)
+        │
+        ▼
+What are we actually measuring/calibrating? (Voltage, Current — NOT power)
+        │
+        ▼
+⇒ Therefore we must learn: R, L, C, V, I → Magnetics → Signal conditioning
+   → Semiconductor switches → ADC/DAC → Digital fundamentals
+</code></pre>
+<p>The instructor's key teaching point: <strong>you only measure or calibrate a
+sensor in terms of Voltage and Current.</strong> Power, speed, SOC (state of
+charge), etc. are <em>calculated/derived</em> quantities, never measured directly.</p>
+<h2 id="how-these-notes-are-organized">How these notes are organized</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>File</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td><code>00-overview.md</code></td>
+<td>This file — course map</td>
+</tr>
+<tr>
+<td>01</td>
+<td><code>01-systems-and-signal-flow.md</code></td>
+<td>System flow, building blocks, engine control system, EV sensors</td>
+</tr>
+<tr>
+<td>02</td>
+<td><code>02-sensors-classification.md</code></td>
+<td>Sensor types, technologies, signal chain (Sensor → Signal Conditioning → ADC → ECU)</td>
+</tr>
+<tr>
+<td>03</td>
+<td><code>03-voltage-and-current.md</code></td>
+<td>Voltage/current basics, AC vs DC, water analogy, Ohm's law</td>
+</tr>
+<tr>
+<td>04</td>
+<td><code>04-resistors-and-networks.md</code></td>
+<td>Resistors, colour code, series/parallel, voltage &amp; current dividers</td>
+</tr>
+<tr>
+<td>05</td>
+<td><code>05-capacitors.md</code></td>
+<td>Capacitor theory, energy storage, series/parallel</td>
+</tr>
+<tr>
+<td>06</td>
+<td><code>06-inductors-and-magnetism.md</code></td>
+<td>Inductors, magnetic fields, Faraday's law, transformers, DC motor</td>
+</tr>
+<tr>
+<td>07</td>
+<td><code>07-ac-fundamentals-impedance.md</code></td>
+<td>AC Ohm's law, reactance, impedance, phasors, power factor</td>
+</tr>
+<tr>
+<td>08</td>
+<td><code>08-circuit-laws-and-thevenin.md</code></td>
+<td>KCL/KVL, mesh &amp; nodal analysis, Thevenin's theorem</td>
+</tr>
+<tr>
+<td>09</td>
+<td><code>09-semiconductor-basics.md</code></td>
+<td>Conductors/insulators/semiconductors, doping, PN junction</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>10-diodes-and-applications.md</code></td>
+<td>Diode behaviour, rectification, alternator charging</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>11-transistors-bjt-mosfet.md</code></td>
+<td>BJT, transistor as a switch, FET/MOSFET</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>12-digital-logic-gates.md</code></td>
+<td>AND/OR/NOT/NAND/NOR/XOR gates, CMOS NOT gate, IC pinouts</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>13-boolean-algebra.md</code></td>
+<td>Boolean laws, De Morgan's theorem, worked design example</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>14-power-electronics-thyristors.md</code></td>
+<td>Voltage chopping, SCR/Thyristor, Triac</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quick-reference-the-fundamentals-checklist-from-class">Quick-reference: the "fundamentals checklist" from class</h2>
+<p>The instructor built this list live in class — it is effectively the
+syllabus for this block of lectures:</p>
+<ol>
+<li><strong>Fundamentals of R, L, C, V, I</strong> (this lecture — mostly done)</li>
+<li><strong>Fundamentals of magnetic fields</strong></li>
+<li><strong>Signal conditioning</strong> — Op-amps, filters</li>
+<li><strong>Semiconductor switches</strong> — protection, power conversion</li>
+<li><strong>Fundamentals of ADC &amp; DAC</strong></li>
+<li><strong>Digital fundamentals</strong> — logic gates, Boolean algebra</li>
+</ol>
+<p>Items 1, 2, 4, 6 were substantially covered in this lecture; items 3 and 5
+(signal conditioning, ADC/DAC) are deferred until after sensors are
+introduced, since they make more sense in that context.</p>
+<h2 id="golden-rules-repeated-throughout-the-lecture">Golden rules repeated throughout the lecture</h2>
+<ul>
+<li><strong>You cannot measure power directly</strong> — only voltage, current, and
+  temperature are measured; power, SOC, speed (in this EV context) etc. are
+  calculated.</li>
+<li><strong>Voltage is measured in parallel; current is measured in series.</strong></li>
+<li>A <strong>sensor</strong> needs an electronic interface to be read; a <strong>transducer</strong>
+  (e.g. an LVDT) can sometimes be read directly/mechanically. The line
+  between the two terms is blurry, but this is the practical distinction
+  drawn in class.</li>
+<li>Every sensor technology reduces to one of three physical properties:
+  <strong>resistive, inductive, or capacitive</strong> (Hall-effect and piezoelectric are
+  treated as sub-cases of inductive and capacitive respectively).</li>
+<li>Signal chain: <strong>Measured quantity → Sensor → Signal Conditioning
+  (amplify/attenuate/filter) → ADC → ECU → (DAC) → Actuator.</strong></li>
+</ul>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="next" href="notes/01-systems-and-signal-flow.html">Module 1: Systems &amp; Signal Flow →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

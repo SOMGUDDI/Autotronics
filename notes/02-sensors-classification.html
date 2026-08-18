@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2: Sensor Classification · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class="active"><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="2-sensor-classification">2. Sensor Classification</h1>
+<h2 id="21-three-way-classification">2.1 Three-way classification</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Sub-types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Physical sensors</strong></td>
+<td>Temperature, Pressure, Position, Level</td>
+</tr>
+<tr>
+<td><strong>Electrical sensors</strong></td>
+<td>Current, Voltage</td>
+</tr>
+<tr>
+<td><strong>Chemical / environmental sensors</strong></td>
+<td>Gas concentration, Humidity, Fluid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-classification-by-underlying-technology">2.2 Classification by underlying technology</h2>
+<p>All sensor technologies used in this course reduce to <strong>three broad
+categories</strong> (the property of the material/component is exploited to build
+the sensor):</p>
+<ol>
+<li><strong>Resistive</strong> — potentiometers, voltage-divider based sensors, series &amp;
+   parallel resistor networks</li>
+<li><strong>Inductive</strong> — magnetic-field based; Hall-effect sensors are treated as
+   a sub-case of inductive sensing</li>
+<li><strong>Capacitive</strong> — depends on voltage and the distance between plates;
+   piezoelectric sensors are treated as a capacitive sub-case</li>
+</ol>
+<blockquote>
+<p>There are more categories in general sensor engineering, but for this
+course these three are the broad buckets everything is mapped into.</p>
+</blockquote>
+<h2 id="23-what-is-actually-measured-vs-calculated">2.3 What is actually measured vs calculated</h2>
+<ul>
+<li><strong>Measured (has a sensor):</strong> Speed, Temperature, Pressure, Flow, Position,
+  Voltage, Current</li>
+<li><strong>Calculated (no direct sensor):</strong> Power, SOC, and similar derived
+  quantities</li>
+</ul>
+<p>All of the above measured physical quantities are ultimately <strong>calibrated
+in terms of Voltage and Current</strong>, using resistive, inductive, or
+capacitive technology.</p>
+<h2 id="24-sensor-vs-transducer-class-discussion">2.4 Sensor vs. Transducer (class discussion)</h2>
+<p>A student asked about the difference. The instructor's practical answer:</p>
+<ul>
+<li>Historically the terms are used interchangeably.</li>
+<li>Practically, a device like an <strong>LVDT (Linear Variable Differential
+  Transformer)</strong> can, in principle, be read directly/mechanically (a
+  "screw-gauge"-like physical readout) — this is closer to what people
+  originally meant by <em>transducer</em>.</li>
+<li>What this course calls a <strong>sensor</strong> always needs an <strong>electronic
+  interface</strong>: you cannot read a value off it without processing an
+  electrical signal.</li>
+</ul>
+<p>This is not a universally agreed distinction, but it is the working
+definition used in the course.</p>
+<h2 id="25-amplitude-ranges-and-signal-conditioning-motivation">2.5 Amplitude ranges and signal conditioning motivation</h2>
+<ul>
+<li>Many raw sensor outputs are only <strong>millivolts or microvolts</strong> — too small
+  for the ECU to use directly, so they must be <strong>amplified</strong>.</li>
+<li>Some signals (e.g. <strong>engine knock</strong>) sit inside a noisy environment, so
+  the true signal has to be <strong>filtered</strong> out of surrounding disturbance.</li>
+<li>Amplification + attenuation + filtering + noise elimination are
+  collectively called <strong>signal conditioning</strong>, covered in a later module
+  (Op-amps, filters).</li>
+</ul>
+<h2 id="26-the-complete-instrumentation-loop-repeated-for-emphasis">2.6 The complete instrumentation loop (repeated for emphasis)</h2>
+<pre><code>Measurable/measured quantity
+        │
+        ▼
+     Sensor  (Resistive / Inductive / Capacitive)
+        │  (raw analog signal, may be mV–µV range, 0–5V typical after scaling)
+        ▼
+ Signal Conditioning  (amplify / attenuate / filter noise)
+        │  (clean analog signal)
+        ▼
+      ADC   (Analog-to-Digital Converter)
+        │  (digital word)
+        ▼
+      ECU
+        │  (digital output, if actuation needed)
+        ▼
+      DAC   (Digital-to-Analog Converter)
+        │
+        ▼
+    Actuator
+</code></pre>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="01-systems-and-signal-flow.html">← Module 1: Systems &amp; Signal Flow</a><a class="next" href="03-voltage-and-current.html">Module 3: Voltage &amp; Current →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

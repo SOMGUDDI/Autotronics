@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 11: Transistors: BJT & MOSFET · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class="active"><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="11-transistors-bjt-mosfet">11. Transistors — BJT &amp; MOSFET</h1>
+<h2 id="111-bipolar-junction-transistors-bjt">11.1 Bipolar Junction Transistors (BJT)</h2>
+<p>A BJT is a <strong>three-terminal, two-junction</strong> device: <strong>Emitter, Base,
+Collector</strong>. It comes in two flavours:</p>
+<ul>
+<li><strong>PNP</strong> — P-type / N-type / P-type</li>
+<li><strong>NPN</strong> — P-type / N-type / P-type (mirrored: N / P / N)</li>
+</ul>
+<h3 id="doping-levels-why-they-matter">Doping levels (why they matter)</h3>
+<ul>
+<li><strong>Emitter</strong> — heavily doped</li>
+<li><strong>Base</strong> — lightly doped (and physically very thin)</li>
+<li><strong>Collector</strong> — intermediate doping, between the heavy emitter doping and
+  the light base doping</li>
+</ul>
+<p><strong>Why "Bipolar"?</strong> Operation depends on <strong>both</strong> free electrons <em>and</em>
+holes — both types of charge carrier participate, unlike unipolar (FET)
+devices which use only one carrier type.</p>
+<figure class="diagram"><img alt="PNP/NPN construction and two-diode analogy" src="../../assets/img/bjt-basics.png"><figcaption>PNP/NPN construction and two-diode analogy</figcaption></figure>
+<h3 id="two-diode-analogy">Two-diode analogy</h3>
+<p>A BJT can be thought of as <strong>two back-to-back diodes</strong> sharing a common
+base region — e.g. for NPN: Base–Emitter junction and Base–Collector
+junction, each behaving like a diode, but the thin shared base region is
+what creates transistor action (rather than two independent diodes).</p>
+<h2 id="112-transistor-currents-and-current-gain">11.2 Transistor currents and current gain</h2>
+<pre><code>I_E = I_C + I_B          (Emitter current = Collector + Base current)
+I_C ≈ I_E                 (since I_B is very small)
+
+α_dc = I_C / I_E           (common-base current gain, ≈ close to 1)
+β_dc = I_C / I_B           (common-emitter current gain — &quot;current gain of the transistor&quot;)
+</code></pre>
+<figure class="diagram"><img alt="Transistor current directions and gain formulas" src="../../assets/img/bjt-symbols.png"><figcaption>Transistor current directions and gain formulas</figcaption></figure>
+<h3 id="worked-example">Worked example</h3>
+<blockquote>
+<p>A transistor has a collector current of 10 mA and a base current of
+40 µA. What is the current gain?</p>
+</blockquote>
+<pre><code>β_dc = I_C / I_B = 10 mA / 40 µA = 250
+</code></pre>
+<p>A <strong>small base current controls a much larger collector current</strong> — this
+amplification property is the essence of transistor action.</p>
+<h2 id="113-transistor-operating-regions">11.3 Transistor operating regions</h2>
+<p>Looking at the <strong>I_C vs V_CE</strong> output characteristic curves (a family of
+curves, one per base current <code>I_B</code>):</p>
+<ul>
+<li><strong>Saturation region:</strong> the transistor acts like a <strong>short circuit</strong> —
+  current flows freely from collector to emitter, <code>V_CE ≈ 0</code>.</li>
+<li><strong>Cut-off region:</strong> the transistor acts like an <strong>open circuit</strong> — no
+  current flows from collector to emitter, regardless of <code>V_CE</code> (until
+  breakdown).</li>
+<li><strong>Active (linear) region:</strong> collector current <code>I_C</code> is <strong>proportional</strong>
+  to the base current <code>I_B</code> flowing in — this is the region used for
+  linear amplification.</li>
+</ul>
+<figure class="diagram"><img alt="Transistor I_C vs V_CE output characteristics — three regions" src="../../assets/img/bjt-regions.png"><figcaption>Transistor I_C vs V_CE output characteristics — three regions</figcaption></figure>
+<h2 id="114-transistor-as-a-switch">11.4 Transistor as a switch</h2>
+<p>The most common automotive/embedded use of a BJT is <strong>not</strong> as a linear
+amplifier but as a <strong>digital switch</strong>:</p>
+<pre><code>+6V ── R1 ──┬── LED (cathode to collector)
+            │
+         [NPN] ── base driven via R2 by a control switch SW1
+            │
+           GND (emitter)
+</code></pre>
+<ul>
+<li><strong>SW1 open → I_B = 0 → transistor in cut-off → LED off</strong> (transistor
+  acts as open circuit).</li>
+<li><strong>SW1 closed → I_B flows → transistor driven into saturation → LED
+  on</strong> (transistor acts as closed/short circuit, sinking current from
+  the LED to ground).</li>
+</ul>
+<figure class="diagram"><img alt="Transistor-as-switch driving an LED" src="../../assets/img/transistor-switch.png"><figcaption>Transistor-as-switch driving an LED</figcaption></figure>
+<h2 id="115-field-effect-transistors-fet-the-unipolar-alternative">11.5 Field Effect Transistors (FET) — the "unipolar" alternative</h2>
+<p><strong>Why "Unipolar"?</strong> Operation depends on <strong>either</strong> free electrons <strong>or</strong>
+holes (not both) — only one type of carrier does the conducting.</p>
+<p>Three terminals: <strong>Gate (G), Drain (D), Source (S)</strong>. The gate voltage
+<code>V_GD</code>/<code>V_GS</code> controls the current flowing from Drain to Source without
+drawing (significant) gate current — this is the key structural difference
+from a BJT, where base <em>current</em> controls the collector current.</p>
+<figure class="diagram"><img alt="FET structure and symbol" src="../../assets/img/fet-basics.png"><figcaption>FET structure and symbol</figcaption></figure>
+<h2 id="116-mosfet">11.6 MOSFET</h2>
+<p><strong>MOSFET</strong> = Metal-Oxide-Semiconductor Field-Effect Transistor.</p>
+<h3 id="structure">Structure</h3>
+<pre><code>Source (S)         Gate (G)         Drain (D)
+   │                  │                 │
+  [n⁺]───Channel region───[n⁺]     (n-channel MOSFET shown)
+   └──────────────────────────────────┘
+              p-type substrate (Body)
+                     │
+                   Oxide (SiO₂) insulates the metal gate from the channel
+</code></pre>
+<ul>
+<li>The <strong>Gate</strong> is separated from the channel by a thin <strong>oxide (SiO₂)
+  insulating layer</strong> — hence "Metal-Oxide-Semiconductor."</li>
+<li><strong>Gate voltage controls drain current</strong> by attracting (or repelling)
+  carriers to form/deplete a conducting channel between source and drain —
+  again, essentially <strong>no gate current</strong> flows in normal operation (very
+  high input impedance).</li>
+<li>Because there's no need to physically move a base-current's worth of
+  charge carriers to switch it, a MOSFET switches <strong>much faster</strong> than an
+  equivalent BJT.</li>
+</ul>
+<p><img alt="MOSFET cross-section structure" src="../../assets/img/mosfet-structure.png" />
+<img alt="MOSFET circuit symbol and substrate view" src="../../assets/img/mosfet-symbol.png" /></p>
+<h3 id="mosfet-advantages-as-listed-in-class-vs-bjt">MOSFET advantages (as listed in class) vs BJT</h3>
+<ul>
+<li><strong>Input impedance — very high</strong> (gate draws almost no current)</li>
+<li><strong>Size — very small</strong> (easier to integrate at high density, e.g. in ICs)</li>
+<li><strong>Less noisy</strong> than BJT</li>
+<li><strong>No thermal runaway</strong> (a failure mode where a BJT's collector current
+  increases with temperature, which further increases temperature, in a
+  positive-feedback loop — MOSFETs don't share this weakness in the same
+  way)</li>
+</ul>
+<h2 id="117-bjt-vs-mosfet-summary">11.7 BJT vs MOSFET — summary</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>BJT</th>
+<th>MOSFET</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carrier type</td>
+<td>Bipolar (electrons + holes)</td>
+<td>Unipolar (one carrier type)</td>
+</tr>
+<tr>
+<td>Control terminal</td>
+<td>Base — controlled by <strong>current</strong></td>
+<td>Gate — controlled by <strong>voltage</strong></td>
+</tr>
+<tr>
+<td>Input impedance</td>
+<td>Moderate/low</td>
+<td>Very high</td>
+</tr>
+<tr>
+<td>Switching speed</td>
+<td>Slower</td>
+<td>Much faster</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Larger</td>
+<td>Very small</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+<tr>
+<td>Thermal runaway risk</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="10-diodes-and-applications.html">← Module 10: Diodes &amp; Applications</a><a class="next" href="12-digital-logic-gates.html">Module 12: Digital Logic Gates →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

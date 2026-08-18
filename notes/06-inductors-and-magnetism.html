@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6: Inductors & Magnetism · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class="active"><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="6-inductors-magnetism">6. Inductors &amp; Magnetism</h1>
+<h2 id="61-inductor-basics">6.1 Inductor basics</h2>
+<p><strong>Any current-carrying conductor produces a magnetic field.</strong> An inductor
+is an <strong>N-turn coil wound on a core</strong>, giving it both an electrical and a
+magnetic aspect. Used as filters, in motors, transformers, etc.</p>
+<blockquote>
+<p>An inductor opposes the rate of change of current flowing through it due
+to the build-up of self-induced energy within its magnetic field.</p>
+</blockquote>
+<pre><code>V_L(t) = dΦ/dt = L·(di/dt)         (Ohm's-law analogue for an inductor)
+</code></pre>
+<ul>
+<li><code>Φ</code> = magnetic flux (Weber)</li>
+<li><code>L</code> = inductance (Henry)</li>
+<li><code>i</code> = current (Ampere)</li>
+<li><code>V</code> = voltage</li>
+</ul>
+<figure class="diagram"><img alt="Inductor symbol, coil, and equations" src="../../assets/img/inductor-basics.png"><figcaption>Inductor symbol, coil, and equations</figcaption></figure>
+<h3 id="two-key-behavioural-facts">Two key behavioural facts</h3>
+<ol>
+<li><strong>Current through an inductor cannot change instantaneously</strong> (because
+   of the <code>di/dt</code> term).</li>
+<li><strong>A fully-charged inductor acts as a short circuit</strong> — once fully
+   "charged" (current has stabilised), there is no further change in
+   current, so the induced back-EMF is zero and the inductor presents zero
+   resistance to steady current, exactly like the closed-switch case in
+   note 03 §3.4.</li>
+<li>A <strong>fully-charged inductor also acts as a current source</strong> (it will
+   try to maintain its established current if the circuit changes
+   suddenly).</li>
+</ol>
+<h3 id="time-constant">Time constant</h3>
+<pre><code>i(t) = I₀ · e^(−R/L · t)
+</code></pre>
+<p><code>L/R</code> is the <strong>time constant</strong> — it determines how fast the inductor
+charges or discharges (this is the RL analogue of the RC time constant).</p>
+<h2 id="62-inductors-as-sensors">6.2 Inductors as sensors</h2>
+<p>A changing flux <code>dΦ/dt</code> induces a voltage (EMF) — this is the basis for
+using coils as <strong>speed/position sensors</strong> (e.g. inductive crankshaft
+sensors): a rotating toothed wheel near a coil changes the flux linking the
+coil as it turns, inducing a voltage pulse per tooth.</p>
+<figure class="diagram"><img alt="Inductor used as a sensor — flux change induces EMF" src="../../assets/img/inductor-sensor.png"><figcaption>Inductor used as a sensor — flux change induces EMF</figcaption></figure>
+<h2 id="63-right-hand-rule-magnetic-flux-lines">6.3 Right-hand rule &amp; magnetic flux lines</h2>
+<p>Point the thumb in the direction of conventional current flow; the curled
+fingers show the direction of the magnetic field/flux lines around the
+conductor. Wrapping a wire into a coil concentrates and aligns these flux
+lines. Wrapping the coil around a <strong>ferromagnetic core</strong> further
+concentrates the flux lines <em>inside</em> the core (air alone has no
+concentrating medium, so flux in air spreads out and cannot be as tightly
+directed).</p>
+<p><img alt="Right-hand rule and coil" src="../../assets/img/right-hand-rule.png" />
+<img alt="Magnetic field around current-carrying wire; bar magnet field" src="../../assets/img/magnetic-field-basics.png" /></p>
+<h2 id="64-faradays-law-and-mutual-induction-transformer-principle">6.4 Faraday's Law and mutual induction (Transformer principle)</h2>
+<pre><code>e = −N · dΦ/dt
+</code></pre>
+<ul>
+<li><code>N</code> = number of turns</li>
+<li><code>e</code> = induced EMF</li>
+<li>Sign convention: <code>e₁ = −N₁ dΦ/dt</code> in the primary, and the same changing
+  flux, linking the secondary coil <code>N₂</code>, induces <code>e₂ = −N₂ dΦ/dt</code> in the
+  secondary.</li>
+</ul>
+<h3 id="how-a-transformer-works-from-the-four-panel-animation">How a transformer works (from the four-panel animation)</h3>
+<ol>
+<li><strong>Switch open, no current flowing</strong> — no field, no induced voltage.</li>
+<li><strong>Switch closed, current building up</strong> — magnetic field builds up,
+   voltage is induced into the secondary (transient).</li>
+<li><strong>Switch closed, current flow constant</strong> — magnetic field steady, <strong>no
+   voltage induced into secondary</strong> (a constant flux induces nothing).</li>
+<li><strong>Switch open, current flow stops</strong> — magnetic field collapses, a
+   (reverse-polarity) voltage is again induced into the secondary.</li>
+</ol>
+<figure class="diagram"><img alt="Four-stage transformer flux animation" src="../../assets/img/magnetic-field-transformer.png"><figcaption>Four-stage transformer flux animation</figcaption></figure>
+<p><strong>This is exactly why a transformer only works on AC, never DC</strong>: DC would
+settle to a constant flux (step 3), inducing zero secondary voltage — "the
+core will saturate" and stop producing any change once current is steady.
+AC continuously changes, so it continuously induces a secondary voltage.</p>
+<h3 id="formal-transformer-relations">Formal transformer relations</h3>
+<pre><code>Primary:    v₁ → i₁ → Φ₁ → e₁ = −N₁ dΦ/dt
+Secondary:  e₂ = −N₂ dΦ/dt → i₂ → v₂
+
+If N₁ = N₂  ⇒  isolation transformer (voltage ratio 1:1, used for
+                electrical isolation / protection, not for stepping voltage)
+</code></pre>
+<figure class="diagram"><img alt="Transformer principle, primary/secondary" src="../../assets/img/transformer-principle.png"><figcaption>Transformer principle, primary/secondary</figcaption></figure>
+<h3 id="coupled-coil-arrangement-physical-demo-referenced-in-class">Coupled-coil arrangement (physical demo referenced in class)</h3>
+<p>Two separate coils (Coil-1 driven by a switch+battery, Coil-2 connected to
+a galvanometer) demonstrate mutual induction without a shared core —
+flux from Coil-1 links Coil-2 and induces a measurable current there when
+Coil-1's current changes.</p>
+<figure class="diagram"><img alt="Inductor coil arrangement / coupled coils demo" src="../../assets/img/inductor-arrangement.png"><figcaption>Inductor coil arrangement / coupled coils demo</figcaption></figure>
+<h2 id="65-four-basic-magnetic-electric-relationships-from-slide-magnetic-field">6.5 Four basic magnetic-electric relationships (from slide "Magnetic field")</h2>
+<ol>
+<li>A current-carrying wire produces a magnetic field around it.</li>
+<li>A time-changing magnetic field induces a voltage in a coil linked by it.
+   <em>(basis of transformer action)</em></li>
+<li>A current-carrying wire in the presence of a magnetic field experiences
+   a force. <em>(basis of motor action)</em></li>
+<li>A moving wire in the presence of a magnetic field has a voltage induced
+   in it. <em>(basis of generator action)</em></li>
+</ol>
+<h2 id="66-dc-motor-actuator">6.6 DC Motor (Actuator)</h2>
+<p>A coil (armature) carrying current sits inside a magnetic field between
+poles N and S. The force on the current-carrying coil (fact #3 above)
+produces a turning effect. A <strong>split-ring commutator</strong> with <strong>brushes</strong>
+reverses the current direction in the coil every half-turn, so the torque
+keeps acting in the same rotational sense, producing continuous rotation.</p>
+<figure class="diagram"><img alt="DC motor coil-in-field demo with commutator/brushes" src="../../assets/img/dc-motor.png"><figcaption>DC motor coil-in-field demo with commutator/brushes</figcaption></figure>
+<p>The motor's turning effect: current flowing through the coil in a magnetic
+field experiences a force (<code>F</code>) on each side of the loop in opposite
+directions, creating a torque. As the coil rotates through the field, the
+force weakens near the pole faces and strengthens elsewhere (visualised via
+the flux-density diagram).</p>
+<figure class="diagram"><img alt="DC motor operation — turning effect of a coil in a magnetic field" src="../../assets/img/dc-motor-detail.png"><figcaption>DC motor operation — turning effect of a coil in a magnetic field</figcaption></figure>
+<h2 id="67-symbol-formula-quick-reference">6.7 Symbol / formula quick reference</h2>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Magnetic flux</td>
+<td>Φ</td>
+<td>Weber (Wb)</td>
+</tr>
+<tr>
+<td>Inductance</td>
+<td>L</td>
+<td>Henry (H)</td>
+</tr>
+<tr>
+<td>Current</td>
+<td>i</td>
+<td>Ampere (A)</td>
+</tr>
+<tr>
+<td>Induced EMF</td>
+<td>e</td>
+<td>Volt (V)</td>
+</tr>
+<tr>
+<td>Number of turns</td>
+<td>N</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="05-capacitors.html">← Module 5: Capacitors</a><a class="next" href="07-ac-fundamentals-impedance.html">Module 7: AC Fundamentals &amp; Impedance →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

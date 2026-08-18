@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 8: Circuit Laws & Thevenin · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class="active"><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="8-circuit-laws-kcl-kvl-meshnodal-analysis-thevenins-theorem">8. Circuit Laws — KCL, KVL, Mesh/Nodal Analysis, Thevenin's Theorem</h1>
+<h2 id="81-kirchhoffs-current-law-kcl-junction-rule">8.1 Kirchhoff's Current Law (KCL) — Junction Rule</h2>
+<blockquote>
+<p>At any junction, the sum of the currents must equal zero.</p>
+</blockquote>
+<pre><code>Σ I_junction = 0
+</code></pre>
+<p>Equivalent statement: current entering a node = current leaving it.</p>
+<h2 id="82-kirchhoffs-voltage-law-kvl-loop-rule">8.2 Kirchhoff's Voltage Law (KVL) — Loop Rule</h2>
+<blockquote>
+<p>The sum of the potential differences across all elements around any
+closed circuit loop must be zero.</p>
+</blockquote>
+<pre><code>Σ ΔV_closed loop = 0
+</code></pre>
+<h3 id="worked-example">Worked example</h3>
+<p>Loop with two EMF sources and two resistors in series:
+<code>ε₁ = 6.0 V</code>, <code>ε₂ = 10 Ω</code>(as resistor)... using the general form:</p>
+<pre><code>Σ ΔV = 0  ⇒  ε₁ − IR₁ − ε₂ − IR₂ = 0
+I = (ε₁ − ε₂) / (R₁ + R₂) = (6.0 V − 12 V) / (8.0 Ω + 10 Ω) = −0.33 A
+</code></pre>
+<p>(The negative sign indicates the assumed current direction was opposite to
+the actual direction — a standard KVL bookkeeping result.)</p>
+<figure class="diagram"><img alt="KCL and KVL statements with worked example" src="../../assets/img/kcl-kvl.png"><figcaption>KCL and KVL statements with worked example</figcaption></figure>
+<h2 id="83-two-circuit-solving-methods-demonstrated">8.3 Two circuit-solving methods demonstrated</h2>
+<h3 id="method-1-mesh-analysis">Method 1 — Mesh Analysis</h3>
+<ul>
+<li>Assume a <strong>mesh current</strong> in each independent loop (e.g. <code>I_A</code> in loop 1,
+  <code>I_B</code> in loop 2).</li>
+<li>Write KVL around each mesh in terms of these mesh currents, e.g.:</li>
+</ul>
+<pre><code>Loop 1:  10·I_A + 10(I_A − I_B) + 10 − 10 = 0
+Loop 2:  5·I_B − 20 − 10 + 10(I_B − I_A) = 0
+</code></pre>
+<ul>
+<li>Solve the resulting simultaneous equations for <code>I_A</code>, <code>I_B</code>; branch
+  currents like <code>I_3 = I_A</code> (or similar, depending on the circuit
+  topology) fall out directly.</li>
+<li>Homework noted: solving the resulting system of simultaneous equations.</li>
+</ul>
+<figure class="diagram"><img alt="Mesh analysis worked example" src="../../assets/img/kvl-example.png"><figcaption>Mesh analysis worked example</figcaption></figure>
+<h3 id="method-2-nodal-analysis">Method 2 — Nodal Analysis</h3>
+<ul>
+<li>Assign a reference node (ground) and unknown node voltages.</li>
+<li>Apply <strong>KCL</strong> at each non-reference node, expressing branch currents via
+  Ohm's law in terms of node voltages.</li>
+<li>Example equations built in class at two nodes (labelled 1 and 2):</li>
+</ul>
+<pre><code>Node 1:   10·I₁ − 10·I₂ + 10 = 10
+Node 2:    5·I₃ − 20 − 10 + 10·I₂ = 0
+Constraint: I₁ + I₂ = I₃
+</code></pre>
+<p>(Exact coefficients depend on the specific resistor values in the circuit
+being solved — the structure/approach is the transferable part.)</p>
+<figure class="diagram"><img alt="Nodal analysis setup" src="../../assets/img/mesh-nodal.png"><figcaption>Nodal analysis setup</figcaption></figure>
+<h3 id="general-seriesparallel-reduction-recap-avoid-overkill">General series/parallel reduction (recap, avoid overkill)</h3>
+<p>For simpler circuits, plain series/parallel reduction plus KVL is often
+enough — no need for full mesh/nodal machinery. Example shown in class:</p>
+<pre><code>V = V_R1 + V_R2     (KVL, series-ish branch)
+R2 ∥ R3  ⇒  R_eq = R2R3/(R2+R3)
+V = I·R1 + I·(R2R3)/(R2+R3)
+</code></pre>
+<h2 id="84-thevenins-theorem">8.4 Thevenin's Theorem</h2>
+<blockquote>
+<p><strong>Thevenin voltage (V_TH)</strong> is the voltage across the load terminals when
+the load resistor is removed (open-circuited).</p>
+<p><strong>Thevenin resistance (R_TH)</strong> is the resistance an ohmmeter would
+measure across the load terminals <strong>with all independent sources
+replaced by their internal resistance</strong> (voltage sources shorted, current
+sources opened) and the load removed.</p>
+</blockquote>
+<pre><code>I_L = V_TH / (R_TH + R_L)
+</code></pre>
+<p>Any linear circuit with DC sources and linear resistances, as seen from two
+load terminals A–B, can be replaced by a single voltage source <code>V_TH</code> in
+series with a single resistor <code>R_TH</code>.</p>
+<figure class="diagram"><img alt="Thevenin's theorem statement and equivalent-circuit concept" src="../../assets/img/thevenin-intro.png"><figcaption>Thevenin&#x27;s theorem statement and equivalent-circuit concept</figcaption></figure>
+<h3 id="worked-example-1">Worked example 1</h3>
+<p>Three resistor networks reducible via series/parallel combination rules to
+find <code>R_TH</code>, then <code>V_TH</code> found by open-circuiting the load and solving the
+remaining circuit (voltage-divider style, since no current flows into the
+open load branch).</p>
+<figure class="diagram"><img alt="Thevenin worked resistor network" src="../../assets/img/thevenin-example1.png"><figcaption>Thevenin worked resistor network</figcaption></figure>
+<h3 id="worked-example-2-step-by-step-reduction">Worked example 2 — step-by-step reduction</h3>
+<p>Given <code>R_L1 = 100 Ω</code>, <code>R_L2 = 1000 Ω</code>, <code>R_L3 = 5 kΩ</code> combined with a 6 kΩ,
+4 kΩ, 3 kΩ network and a 72 V source:</p>
+<ol>
+<li><strong>100 Ω in series with 4 kΩ</strong> → <code>4100 Ω</code></li>
+<li><strong>4100 Ω in parallel with 3000 Ω</strong> → <code>R_eq = (4100 × 3000)/(4100+3000) ≈ 2410 Ω</code>... (worked numerically on slide, shown as <code>4100×3000/7100</code>)</li>
+<li><strong>Result in series with 6 kΩ</strong> → final <code>R_eq</code></li>
+<li><strong>Current:</strong> <code>I = 72V / R_eq</code></li>
+<li>Then find <code>I₁</code>, <code>I₂</code>, <code>I₃</code> in the individual branches using current
+   division on the parallel section.</li>
+</ol>
+<figure class="diagram"><img alt="Thevenin equivalent reduction, worked numeric example" src="../../assets/img/thevenin-example2.png"><figcaption>Thevenin equivalent reduction, worked numeric example</figcaption></figure>
+<h3 id="general-thevenin-worked-circuit-with-two-sources">General Thevenin worked circuit with two sources</h3>
+<p>A circuit with two batteries (<code>B₁ = 28V</code> with <code>R₁ = 4Ω</code>, <code>B₂ = 7V</code> with
+<code>R₃ = 1Ω</code>) and a load <code>R₂ = 2Ω</code>:</p>
+<ol>
+<li>Remove the load → find <code>V_TH</code> (open-circuit voltage across load
+   terminals) via superposition/series-parallel analysis of the remaining
+   two-source network. Result on slide: <code>E_Thevenin = 11.2 V</code>.</li>
+<li>Replace sources with their internal resistances → find <code>R_TH</code> by
+   combining <code>R₁ ∥ R₃</code> etc.</li>
+<li>Re-attach the load <code>R_L = 2Ω</code> to the simplified Thevenin equivalent
+   (<code>V_TH</code> in series with <code>R_TH</code>) and solve for load current/voltage
+   directly.</li>
+</ol>
+<h2 id="85-why-thevenins-theorem-matters-here">8.5 Why Thevenin's theorem matters here</h2>
+<p>The instructor's framing: this circuit is a stand-in for <strong>"any circuit
+with DC sources and linear resistances"</strong>, and the "load" terminal can be
+swapped for <em>anything</em> — a TV, a washing machine, a microwave — the same
+Thevenin-equivalent source (<code>V_TH</code>, <code>R_TH</code>) will correctly predict how that
+new load behaves, without re-deriving the whole source network each time.
+This is exactly the mental model used later for analysing how a sensor's
+output behaves once it's connected to signal-conditioning circuitry.</p>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="07-ac-fundamentals-impedance.html">← Module 7: AC Fundamentals &amp; Impedance</a><a class="next" href="09-semiconductor-basics.html">Module 9: Semiconductor Basics →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

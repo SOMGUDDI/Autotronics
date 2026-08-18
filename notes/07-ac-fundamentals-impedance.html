@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 7: AC Fundamentals & Impedance · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class="active"><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="7-ac-circuit-fundamentals-reactance-impedance-phasors">7. AC Circuit Fundamentals — Reactance, Impedance, Phasors</h1>
+<h2 id="71-ohms-law-for-ac-per-component">7.1 Ohm's Law for AC, per component</h2>
+<p>Given <code>v(t) = Vm sin(ωt)</code>, what is <code>i(t)</code> for each passive element?</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Time-domain law</th>
+<th>AC ("phasor") form</th>
+<th>Reactance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resistor</td>
+<td><code>V = IR</code></td>
+<td><code>V = IR</code></td>
+<td>— (no reactance, real only)</td>
+</tr>
+<tr>
+<td>Inductor</td>
+<td><code>V_L = L·di/dt</code></td>
+<td><code>V_L = jI·X_L</code></td>
+<td><code>X_L = ωL</code></td>
+</tr>
+<tr>
+<td>Capacitor</td>
+<td><code>i = C·dv/dt</code></td>
+<td><code>V_C = −jI·X_C</code></td>
+<td><code>X_C = 1/(ωC)</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>X_L</code> = <strong>inductive reactance</strong> (Ω), grows with frequency</li>
+<li><code>X_C</code> = <strong>capacitive reactance</strong> (Ω), shrinks with frequency</li>
+<li><code>ω = 2πf</code></li>
+<li>Units check: L is in Henry, C is in Farad — reactance formulas convert
+  these into an equivalent Ohms value, which is why you <em>cannot</em> write
+  Ohm's law directly in terms of L or C without going through <code>ωL</code> or
+  <code>1/ωC</code>.</li>
+</ul>
+<figure class="diagram"><img alt="AC input Ohm's law for R, L, C" src="../../assets/img/ac-ohms-law.png"><figcaption>AC input Ohm&#x27;s law for R, L, C</figcaption></figure>
+<h2 id="72-rlc-circuit-impedance">7.2 RLC circuit — Impedance</h2>
+<pre><code>V = I · Z
+Z = R ± jX          where   X = X_L ± X_C
+</code></pre>
+<p><code>Z</code> is called the <strong>impedance</strong> — the AC generalisation of resistance,
+combining the resistive (real) and reactive (imaginary) parts.</p>
+<h2 id="73-phasor-relationships-phase-between-v-and-i">7.3 Phasor relationships — phase between V and I</h2>
+<p>For <code>v(t) = Vm sin(ωt)</code>, <code>i(t) = Im sin(ωt)</code>:</p>
+<ol>
+<li><strong>Resistor:</strong> <code>V = IR</code> — voltage and current are <strong>in phase</strong> (no angle
+   shift).</li>
+<li><strong>Inductor:</strong> <code>v(t) = L·di/dt</code> — because of the derivative term,
+   <strong>current lags voltage by an angle φ</strong> (θ in the diagram). Mnemonic used
+   in class: think of it as the current "catching up" to the voltage.</li>
+<li><strong>Capacitor:</strong> <code>v(t) = (1/C)∫i dt</code> — because of the integral term,
+   <strong>current leads voltage by an angle φ</strong>.</li>
+</ol>
+<figure class="diagram"><img alt="AC phasor relationships for R, L, C" src="../../assets/img/ac-phasors.png"><figcaption>AC phasor relationships for R, L, C</figcaption></figure>
+<p><strong>Memory aid:</strong> <em>"ELI the ICE man"</em> — for an inductor (<strong>L</strong>), <strong>E</strong>
+(voltage) leads <strong>I</strong> (current); for a capacitor (<strong>C</strong>), <strong>I</strong> leads <strong>E</strong>.</p>
+<h2 id="74-power-factor-and-why-utilities-care">7.4 Power factor and why utilities care</h2>
+<ul>
+<li>Most real-world (consumer) loads are <strong>inductive</strong> in nature (motors,
+  transformers, etc.), meaning current lags voltage.</li>
+<li>The <strong>power factor</strong> describes how close this phase angle is to zero
+  (ideal = 1.0, i.e. purely resistive/in-phase).</li>
+<li>A power factor that drifts down from ~1 (e.g. to 0.998 and lower)
+  represents <strong>wasted power</strong> from the utility's perspective.</li>
+<li><strong>Fix:</strong> utilities/engineers add <strong>capacitors in parallel</strong> at the load
+  end. Since an inductor "lags" and a capacitor "leads" — in exactly
+  opposite senses — the capacitor's leading reactive component cancels
+  (neutralises) the inductor's lagging reactive component. The real
+  (working) load itself is unaffected; only the reactive mismatch is
+  corrected.</li>
+<li><strong>Inductor = lagging element. Capacitor = leading element.</strong></li>
+</ul>
+<h2 id="75-pure-r-pure-c-pure-l-circuits-quick-comparison">7.5 Pure R, Pure C, Pure L circuits — quick comparison</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pure Resistance</th>
+<th>Pure Capacitance</th>
+<th>Pure Inductance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Impedance</td>
+<td><code>Z = V_R/I_R = R</code></td>
+<td><code>X_C = V_C/I_C = 1/(2πfC)</code></td>
+<td><code>X_L = V_L/I_L = 2πfL</code></td>
+</tr>
+<tr>
+<td>Current</td>
+<td><code>I_S = V_S/R</code></td>
+<td><code>I_S = V_S/X_C</code></td>
+<td><code>I_S = V_S/X_L</code></td>
+</tr>
+<tr>
+<td>Behaviour vs frequency</td>
+<td>Constant (frequency-independent)</td>
+<td>Impedance <strong>drops</strong> as frequency rises</td>
+<td>Impedance <strong>rises</strong> as frequency rises</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Unlike a resistor, which impedes current with a <strong>constant</strong> Ohmic value
+regardless of frequency, capacitors and inductors impede current with a
+<strong>variable</strong> ("AC") Ohms value that depends on the frequency of the power
+supply.</p>
+</blockquote>
+<figure class="diagram"><img alt="Pure resistance / capacitance / inductive circuits compared" src="../../assets/img/pure-circuits.png"><figcaption>Pure resistance / capacitance / inductive circuits compared</figcaption></figure>
+<h2 id="76-series-rlc-filter-behaviour-qualitative-from-class">7.6 Series RLC — filter behaviour (qualitative, from class)</h2>
+<ul>
+<li>In an RLC series circuit driven by AC, <code>v(t) = Vm sin(ωt)</code>.</li>
+<li>As the circuit is switched on, <code>L</code> and <code>C</code> both begin "charging" —
+  energy is continuously exchanged <strong>between L and C</strong> as the circuit
+  oscillates, while <code>R</code> dissipates energy as heat.</li>
+<li>This L–C energy exchange, and the frequency-dependent nature of <code>X_L</code>
+  and <code>X_C</code>, is the basis of <strong>filter design</strong> (covered later in the
+  course, under signal conditioning — RC and RL filter design specifically
+  promised for a later class).</li>
+<li>General relation to keep in mind: <code>X_L &lt; X_C</code> at low frequency and
+  <code>X_L ≫ X_C</code> at high frequency (they cross over at the resonant
+  frequency, where <code>X_L = X_C</code>).</li>
+</ul>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="06-inductors-and-magnetism.html">← Module 6: Inductors &amp; Magnetism</a><a class="next" href="08-circuit-laws-and-thevenin.html">Module 8: Circuit Laws &amp; Thevenin →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

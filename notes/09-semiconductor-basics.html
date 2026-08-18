@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 9: Semiconductor Basics · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class="active"><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="9-semiconductor-fundamentals">9. Semiconductor Fundamentals</h1>
+<h2 id="91-classification-of-materials-by-electrical-resistance">9.1 Classification of materials by electrical resistance</h2>
+<p>Materials span a huge resistance range from very low (conductors) to very
+high (insulators), with semiconductors in between:</p>
+<pre><code>Low resistance (10⁻¹⁰) ──────────────────────────► High resistance (10¹⁸)
+   Conductors            Semiconductors              Insulators
+Gold, Silver,            Silicon, Germanium,        Glass, Rubber, Oil,
+Copper, Iron,            Selenium, Gallium          Plastic, Diamond, etc.
+Aluminum, etc.           arsenide, etc.
+</code></pre>
+<figure class="diagram"><img alt="Classification of materials by resistance" src="../../assets/img/material-classification-1.png"><figcaption>Classification of materials by resistance</figcaption></figure>
+<h3 id="band-gap-energy-band-view">Band-gap (energy-band) view</h3>
+<ul>
+<li><strong>Conductor:</strong> conduction band and valence band <strong>overlap</strong> — no band
+  gap — electrons move freely.</li>
+<li><strong>Semiconductor:</strong> a narrow band gap (~1 eV for silicon) separates
+  valence and conduction bands — electrons can cross it with modest energy
+  (heat, light, doping), leaving behind <strong>holes</strong>.</li>
+<li><strong>Insulator:</strong> a wide band gap (~5 eV or more) — electrons essentially
+  cannot cross into the conduction band under normal conditions.</li>
+</ul>
+<figure class="diagram"><img alt="Energy band diagrams: conductor, semiconductor, insulator" src="../../assets/img/material-classification-2.png"><figcaption>Energy band diagrams: conductor, semiconductor, insulator</figcaption></figure>
+<h2 id="92-conductor-vs-insulator-atomic-view">9.2 Conductor vs Insulator — atomic view</h2>
+<ul>
+<li><strong>Copper atom</strong> (good conductor): only <strong>one electron</strong> in the outermost
+  orbit — very loosely bound, easily donated to conduction.</li>
+<li><strong>Neon atom</strong> (poor conductor/insulator gas): <strong>eight electrons</strong> in the
+  outermost orbit — a full/stable shell, strongly bound, nothing to spare
+  for conduction.</li>
+</ul>
+<figure class="diagram"><img alt="Copper vs Neon atomic structure" src="../../assets/img/conductor-insulator.png"><figcaption>Copper vs Neon atomic structure</figcaption></figure>
+<h2 id="93-silicon-the-semiconductor-atom">9.3 Silicon — the semiconductor atom</h2>
+<p>A silicon atom has <strong>4 valence electrons</strong>. In a silicon crystal, each
+silicon atom is surrounded by <strong>4 other silicon atoms</strong>, and adjacent atoms
+<strong>share one electron each</strong> — this is <strong>covalent bonding</strong>.</p>
+<p>At room temperature, some valence electrons gain enough thermal energy to
+leave their covalent bond/orbit. Where an electron leaves, it creates a
+<strong>hole</strong> (an effective positive charge) — this is called <strong>electron-hole
+pair generation</strong>.</p>
+<figure class="diagram"><img alt="Silicon atom and crystal lattice" src="../../assets/img/semiconductor-atom.png"><figcaption>Silicon atom and crystal lattice</figcaption></figure>
+<h2 id="94-doping-creating-n-type-and-p-type-semiconductors">9.4 Doping — creating N-type and P-type semiconductors</h2>
+<p>Pure ("intrinsic") silicon is a poor conductor at room temperature.
+<strong>Doping</strong> deliberately introduces impurity atoms to increase conductivity
+in a controlled way.</p>
+<h3 id="n-type-pentavalent-doping">N-type: Pentavalent doping</h3>
+<ul>
+<li><strong>Pentavalent atoms</strong> (5 valence electrons) — e.g. <strong>Arsenic, Antimony,
+  Phosphorus</strong>.</li>
+<li>Only 4 of the 5 electrons are needed for covalent bonding with
+  neighbouring silicon atoms — the <strong>5th electron is free</strong>.</li>
+<li>Because these atoms <em>donate</em> an extra electron to the crystal, they are
+  called <strong>donor impurities</strong>.</li>
+<li>Majority charge carriers: <strong>electrons (e⁻)</strong>.</li>
+</ul>
+<h3 id="p-type-trivalent-doping">P-type: Trivalent doping</h3>
+<ul>
+<li><strong>Trivalent atoms</strong> (3 valence electrons) — e.g. <strong>Aluminum, Boron,
+  Gallium</strong>.</li>
+<li>Only 3 electrons are available for the 4 required covalent bonds — one
+  bond is left with a <strong>missing electron</strong>, i.e. a <strong>hole</strong>.</li>
+<li>Since these atoms create an excess of holes, they're called (implicitly)
+  <strong>acceptor impurities</strong>.</li>
+<li>Majority charge carriers: <strong>holes</strong>.</li>
+</ul>
+<pre><code>N-type  →  majority carriers = electrons (e⁻)
+P-type  →  majority carriers = holes
+</code></pre>
+<blockquote>
+<p><strong>Note from class:</strong> electrons have <strong>higher mobility</strong> than holes — an
+important reason NPN transistors are generally faster/preferred over PNP
+in many designs (discussed further in the transistor module).</p>
+</blockquote>
+<p><img alt="Pentavalent/trivalent doping, donor/acceptor atoms" src="../../assets/img/doping-basics.png" />
+<img alt="N-type and P-type semiconductor structure" src="../../assets/img/doping-np.png" /></p>
+<h2 id="95-the-pn-junction">9.5 The P–N Junction</h2>
+<p>When P-type and N-type materials are joined, a <strong>depletion layer</strong> forms
+at the junction — a region depleted of free carriers, because electrons
+near the junction diffuse across and recombine with nearby holes, leaving
+behind fixed (immobile) ion charges: negative ions on the P-side, positive
+ions on the N-side of the junction.</p>
+<p><img alt="P-N junction: ions and depletion layer" src="../../assets/img/pn-junction-1.png" />
+<img alt="P-N junction structure" src="../../assets/img/pn-junction-2.png" /></p>
+<h3 id="forward-bias">Forward bias</h3>
+<ul>
+<li>External voltage: <strong>+ terminal to P-side, − terminal to N-side.</strong></li>
+<li>This <em>opposes/narrows</em> the depletion layer.</li>
+<li><strong>Switch is effectively ON</strong>: majority carriers (holes from P, electrons
+  from N) are pushed toward the junction, recombine, and current flows
+  freely once <code>V ≥ ~0.7V</code> (silicon "knee" voltage).</li>
+<li>Depletion layer: <strong>narrow</strong>.</li>
+<li>Current flow: <strong>large forward current</strong> if <code>V_S &gt; 0.7V</code>.</li>
+</ul>
+<h3 id="reverse-bias">Reverse bias</h3>
+<ul>
+<li>External voltage: <strong>− terminal to P-side, + terminal to N-side.</strong></li>
+<li>This <em>widens</em> the depletion layer.</li>
+<li><strong>Switch is effectively OFF</strong>: the junction has no majority carriers
+  available to cross, so (ideally) no current flows — only a tiny leakage
+  current.</li>
+<li>Depletion layer: <strong>wide</strong>.</li>
+<li>Current flow: <strong>small reverse (saturation/leakage) current</strong>, unless
+  breakdown voltage is exceeded.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Forward Bias</th>
+<th>Reverse Bias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V_S polarity</td>
+<td>(+) to P, (−) to N</td>
+<td>(−) to P, (+) to N</td>
+</tr>
+<tr>
+<td>Current flow</td>
+<td>Large forward current if <code>V_S &gt; 0.7V</code></td>
+<td>Small reverse (saturation + leakage) current</td>
+</tr>
+<tr>
+<td>Depletion layer</td>
+<td>Narrow</td>
+<td>Wide</td>
+</tr>
+</tbody>
+</table>
+<figure class="diagram"><img alt="Forward vs reverse bias comparison table" src="../../assets/img/pn-junction-bias-diagram.png"><figcaption>Forward vs reverse bias comparison table</figcaption></figure>
+<h3 id="physicalintuitive-explanation-from-class-discussion">Physical/intuitive explanation (from class discussion)</h3>
+<ul>
+<li><strong>Forward bias:</strong> P's majority carriers are holes, N's majority carriers
+  are electrons. Under forward bias, holes and electrons are pushed toward
+  the junction; they <strong>recombine</strong>, and this recombination sustains current
+  flow across the junction.</li>
+<li><strong>Reverse bias:</strong> the junction has no majority carriers left near it (they've
+  been pulled away from the junction by the reverse field), so essentially
+  no current flows — only a small <strong>leakage current</strong>.</li>
+</ul>
+<figure class="diagram"><img alt="Forward/reverse bias physical explanation with hand annotation" src="../../assets/img/pn-junction-bias.png"><figcaption>Forward/reverse bias physical explanation with hand annotation</figcaption></figure>
+<h3 id="simple-switch-analogy">Simple switch analogy</h3>
+<ul>
+<li><strong>Switch (diode) ON</strong> (forward biased) → voltage drop across the switch
+  ≈ 0 → nearly all the source voltage appears across the load.</li>
+<li><strong>Switch (diode) OFF</strong> (reverse biased) → the switch blocks the full
+  source voltage (e.g. 12V) across itself; no current reaches the load.</li>
+</ul>
+<h2 id="96-measuring-a-diode-with-a-multimetercurve-tracer">9.6 Measuring a diode with a multimeter/curve tracer</h2>
+<p>A bench demo with a power supply, curve tracer, and multimeter is used to
+show the diode's I–V characteristic directly (forward-bias knee,
+reverse-bias leakage/breakdown regions).</p>
+<figure class="diagram"><img alt="Diode curve-tracer/multimeter bench setup" src="../../assets/img/pn-junction-bench.png"><figcaption>Diode curve-tracer/multimeter bench setup</figcaption></figure>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="08-circuit-laws-and-thevenin.html">← Module 8: Circuit Laws &amp; Thevenin</a><a class="next" href="10-diodes-and-applications.html">Module 10: Diodes &amp; Applications →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

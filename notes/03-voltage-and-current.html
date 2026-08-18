@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3: Voltage & Current · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class=""><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class="active"><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="3-voltage-and-current-fundamentals">3. Voltage and Current Fundamentals</h1>
+<h2 id="31-the-water-analogy">3.1 The water analogy</h2>
+<table>
+<thead>
+<tr>
+<th>Electrical quantity</th>
+<th>Water analogy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charge</td>
+<td>Water</td>
+</tr>
+<tr>
+<td>Voltage</td>
+<td>Pressure</td>
+</tr>
+<tr>
+<td>Current (charge per unit time)</td>
+<td>Flow</td>
+</tr>
+</tbody>
+</table>
+<figure class="diagram"><img alt="Water analogy for voltage/current" src="../../assets/img/vi-water-analogy.png"><figcaption>Water analogy for voltage/current</figcaption></figure>
+<p>Batteries in series behave like water tanks stacked in series — each cell
+adds its pressure (voltage), e.g. 1.5 V + 1.5 V + 1.5 V = 4.5 V, and so on.
+A comparison of an "electrical system" ladder (1.5 V steps up to 6.0 V,
+with LED brightness increasing) against a "water system" ladder (PSI
+pressure increasing, water flow increasing, lamp brightness increasing) —
+both stacks behave identically in principle.</p>
+<figure class="diagram"><img alt="Electrical vs water system side by side" src="../../assets/img/vi-electric-water.png"><figcaption>Electrical vs water system side by side</figcaption></figure>
+<h2 id="32-ac-vs-dc">3.2 AC vs DC</h2>
+<p>Two types of voltage/current exist:</p>
+<ul>
+<li><strong>DC (Direct Current):</strong> defined by <strong>amplitude</strong> only.</li>
+<li><strong>AC (Alternating Current):</strong> defined by <strong>amplitude and frequency</strong>.</li>
+</ul>
+<h3 id="dc-voltage">DC voltage</h3>
+<pre><code>v(t) = V · u(t)
+u(t) = 1  for t ≥ 0
+u(t) = 0  for t &lt; 0
+</code></pre>
+<p>(<code>u(t)</code> is the unit step function — a DC source switches on at t = 0 and
+stays constant.)</p>
+<h3 id="ac-voltage">AC voltage</h3>
+<pre><code>v(t) = Vm sin(ωt)
+ω = 2πf        (ω = angular frequency, f = frequency)
+T = 1/f        (T = time period)
+</code></pre>
+<figure class="diagram"><img alt="DC voltage and AC sine wave plots" src="../../assets/img/vi-dc-ac-plots.png"><figcaption>DC voltage and AC sine wave plots</figcaption></figure>
+<p><strong>Class note:</strong> when categorising sensor outputs earlier, whether the
+output was AC or DC wasn't specified — sensors will later be explicitly
+classified as producing AC or DC outputs. Regardless, <strong>the signal that
+finally reaches the ECU is always DC.</strong></p>
+<h2 id="33-ohms-law">3.3 Ohm's Law</h2>
+<pre><code>V = I · R
+</code></pre>
+<ul>
+<li>V ∝ I (voltage is directly proportional to current, for a fixed
+  resistance R).</li>
+<li>For <strong>DC</strong>: <code>V = IR</code> directly.</li>
+<li>For <strong>AC</strong>, if <code>v(t) = Vm sin(ωt)</code>, then <code>i(t) = Im sin(ωt)</code> too — voltage
+  and current are <strong>in phase</strong> for a pure resistor (see waveform below).</li>
+</ul>
+<h2 id="34-open-circuit-vs-short-circuit-worked-example">3.4 Open circuit vs. short circuit — worked example</h2>
+<p>Circuit: source <code>Vin = 5V</code>, switch <code>S</code>, load, nodes A and B.</p>
+<p><strong>Case 1 — Switch S open (open circuit):</strong>
+- Current <code>I = 0</code>
+- Offers <strong>infinite resistance</strong>
+- <code>V_A = 5V</code>, <code>V_B = 0V</code>
+- <code>V_AB = V_A − V_B = 5V</code> (you would measure the full source voltage across
+  the open switch)</p>
+<p><strong>Case 2 — Switch S closed (short circuit through switch):</strong>
+- Current <code>I ≠ 0</code>
+- Offers <strong>zero resistance</strong>
+- <code>V_A = V_B = 5V</code>
+- <code>V_AB = 0V</code> (both points are at the same potential — no drop across a
+  zero-resistance closed switch, even though current is flowing)</p>
+<p>This open/short-circuit reasoning is reused later to explain how a
+<strong>fully-charged inductor behaves like a short circuit</strong> and a
+<strong>fully-charged capacitor behaves like an open circuit</strong> (see notes 05 and
+06).</p>
+<h2 id="35-series-vs-parallel-measurement-rule">3.5 Series vs parallel measurement rule</h2>
+<blockquote>
+<p><strong>Voltage is always measured in parallel across a component.</strong>
+<strong>Current is always measured in series (in the current path).</strong></p>
+</blockquote>
+<p>This is why, in practice, you cannot insert an ammeter into a live
+high-current line without breaking the circuit — instead, <strong>clamp meters</strong>
+(based on current-transformer / potential-transformer, ultimately
+Hall-effect, principles) are used to measure current without cutting the
+wire.</p>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="02-sensors-classification.html">← Module 2: Sensor Classification</a><a class="next" href="04-resistors-and-networks.html">Module 4: Resistors &amp; Networks →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

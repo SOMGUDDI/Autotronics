@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1: Systems & Signal Flow · Autotronics Fundamentals</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="board">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">⏚</span>
+        <span class="logo-text">AUTOTRONICS<br><small>Electrical &amp; Electronics Fundamentals</small></span>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class=""><a href="../index.html"><span class="pin">◉</span>Course Map</a></li>
+      </ul>
+      <div class="nav-divider">MODULES</div>
+      <ul class="nav-list">
+        <li class="active"><a href="01-systems-and-signal-flow.html"><span class="pin">1</span>Systems &amp; Signal Flow</a></li>
+<li class=""><a href="02-sensors-classification.html"><span class="pin">2</span>Sensor Classification</a></li>
+<li class=""><a href="03-voltage-and-current.html"><span class="pin">3</span>Voltage &amp; Current</a></li>
+<li class=""><a href="04-resistors-and-networks.html"><span class="pin">4</span>Resistors &amp; Networks</a></li>
+<li class=""><a href="05-capacitors.html"><span class="pin">5</span>Capacitors</a></li>
+<li class=""><a href="06-inductors-and-magnetism.html"><span class="pin">6</span>Inductors &amp; Magnetism</a></li>
+<li class=""><a href="07-ac-fundamentals-impedance.html"><span class="pin">7</span>AC Fundamentals &amp; Impedance</a></li>
+<li class=""><a href="08-circuit-laws-and-thevenin.html"><span class="pin">8</span>Circuit Laws &amp; Thevenin</a></li>
+<li class=""><a href="09-semiconductor-basics.html"><span class="pin">9</span>Semiconductor Basics</a></li>
+<li class=""><a href="10-diodes-and-applications.html"><span class="pin">10</span>Diodes &amp; Applications</a></li>
+<li class=""><a href="11-transistors-bjt-mosfet.html"><span class="pin">11</span>Transistors: BJT &amp; MOSFET</a></li>
+<li class=""><a href="12-digital-logic-gates.html"><span class="pin">12</span>Digital Logic Gates</a></li>
+<li class=""><a href="13-boolean-algebra.html"><span class="pin">13</span>Boolean Algebra</a></li>
+<li class=""><a href="14-power-electronics-thyristors.html"><span class="pin">14</span>Power Electronics</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">L2 &amp; L3 · Dr. Madhuri Bayya<br>BITS Pilani · AEZG533/AELZG533</div>
+  </aside>
+  <main class="content">
+    <div class="trace-rule"></div>
+    <article class="markdown-body">
+<h1 id="1-systems-signal-flow">1. Systems &amp; Signal Flow</h1>
+<h2 id="11-the-three-canonical-system-flows">1.1 The three canonical system flows</h2>
+<p>Every automotive electronic system is a variant of one of three flows:</p>
+<p><strong>(a) Control application (closed loop)</strong></p>
+<pre><code>command input → [sensor] → electronic signal processing → [actuator] → plant
+                                                               │
+                                              variable being controlled
+                                                               │
+                                        (fed back as control input) ◄────┘
+</code></pre>
+<p><strong>(b) Measurement/display application (open loop, no feedback)</strong></p>
+<pre><code>physical variable being measured → [sensor] → electronic signal processing → [display] → indicated value
+</code></pre>
+<p><strong>(c) Communication application</strong></p>
+<pre><code>input data (message) → [source] → [channel] → [receiver] → output data (message)
+</code></pre>
+<figure class="diagram"><img alt="System flow diagrams" src="../../assets/img/systems-flow.png"><figcaption>System flow diagrams</figcaption></figure>
+<p><strong>Why is (a) closed-loop and (b) not?</strong> In (a) the system continuously
+monitors the controlled variable and feeds it back — e.g. active engine
+control. In (b), such as an "engine check" warning light, a sensor measures
+a physical variable and the result is only <em>displayed</em>; there is no
+on-board diagnostic action closing the loop back to a controller.</p>
+<h2 id="12-building-blocks-of-a-vehicle-system">1.2 Building blocks of a vehicle system</h2>
+<p>At the top level, an <strong>engine status sensor</strong> feeds an <strong>engine control</strong>
+block, which coordinates:</p>
+<ul>
+<li><strong>EVAP</strong> (evaporative emissions)</li>
+<li><strong>Ignition</strong> — spark plugs, driveshaft, power</li>
+<li><strong>Fuel metering</strong> — MAF sensor, airflow, throttle plate</li>
+<li><strong>EGR</strong> (exhaust gas recirculation) valve → catalytic converter → exhaust emissions</li>
+<li><strong>EGO</strong> (exhaust gas oxygen) sensor feedback</li>
+</ul>
+<p>Six signals commonly named as the sensors of interest for this block:</p>
+<ol>
+<li>Throttle Position Sensor (TPS)</li>
+<li>Mass Airflow sensor (MAF)</li>
+<li>Engine (coolant) temperature sensor (ECT)</li>
+<li>Engine speed (RPM) and angular position</li>
+<li>Exhaust Gas Recirculation (EGR) valve position</li>
+<li>Exhaust Gas Oxygen (EGO) concentration</li>
+</ol>
+<figure class="diagram"><img alt="Building blocks / engine control block diagram" src="../../assets/img/systems-blocks.png"><figcaption>Building blocks / engine control block diagram</figcaption></figure>
+<p>A real wiring-diagram view of this same subsystem (battery, ECM, MAF, TPS,
+IAT, injectors, relays) shows how these signals are physically wired in a
+vehicle:</p>
+<figure class="diagram"><img alt="Full engine subsystem wiring diagram" src="../../assets/img/wiring-diagram.png"><figcaption>Full engine subsystem wiring diagram</figcaption></figure>
+<h2 id="13-worked-example-engine-control-system">1.3 Worked example — Engine Control System</h2>
+<p>The engine control system was used as the running example for the whole
+lecture. It breaks into these stages:</p>
+<pre><code>Air intake measurement
+   → Airflow &amp; intake sensors: MAF sensor, Exhaust &amp; Feedback: Oxygen sensor
+Input to engine control unit
+   → Throttle Position Sensor (TPS), Engine Coolant Temperature sensor (ECT)
+   → Closed loop feedback
+Fuel Injection control
+   → Fuel pressure sensor
+Ignition system
+   → Crankshaft Position sensor, Camshaft Position sensor
+   → Emission control subsystems
+Combustion and power output
+</code></pre>
+<figure class="diagram"><img alt="Engine control system block diagram" src="../../assets/img/engine-control.png"><figcaption>Engine control system block diagram</figcaption></figure>
+<h3 id="sensor-technology-signal-table-built-live-in-class">Sensor → technology → signal table (built live in class)</h3>
+<table>
+<thead>
+<tr>
+<th>Subsystem</th>
+<th>Sensor</th>
+<th>Underlying technology</th>
+<th>Typical output range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air intake</td>
+<td>MAF sensor (measures airflow through throttle plate)</td>
+<td><strong>Hot-wire</strong> (resistive, heat-loss based)</td>
+<td>Analog, 0–5 V</td>
+</tr>
+<tr>
+<td>Air intake</td>
+<td>TPS (Throttle Position Sensor)</td>
+<td><strong>Potentiometer</strong> (variable resistance → voltage)</td>
+<td>Analog, 0–5 V</td>
+</tr>
+<tr>
+<td>Engine condition</td>
+<td>ECT — Engine Coolant Temperature sensor</td>
+<td><strong>Thermistor</strong> (NTC/PTC — resistance varies with temperature)</td>
+<td>Analog voltage, 0–5 V</td>
+</tr>
+<tr>
+<td>Engine condition</td>
+<td>Crankshaft Position sensor</td>
+<td><strong>Hall-effect</strong> or <strong>Inductive</strong> (varying magnetic field)</td>
+<td>Digital (often via ADC directly)</td>
+</tr>
+<tr>
+<td>Engine condition</td>
+<td>Camshaft Position sensor</td>
+<td><strong>Hall-effect</strong></td>
+<td>Digital</td>
+</tr>
+<tr>
+<td>Exhaust/emission</td>
+<td>Oxygen sensor (Lambda sensor)</td>
+<td>Electrochemical, calibrated as voltage</td>
+<td>0–1 V</td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>MAP sensor (Manifold Absolute Pressure)</td>
+<td><strong>Piezoelectric</strong> (capacitive)</td>
+<td>Analog</td>
+</tr>
+<tr>
+<td>Knock</td>
+<td>Knock sensor</td>
+<td><strong>Piezoelectric</strong> (capacitive)</td>
+<td>Analog</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key idea:</strong> a potentiometer (TPS) is a <em>variable resistance</em>, but its
+usable <strong>output is always a voltage</strong> — the resistance itself is never read
+directly; it's converted to a voltage via a divider network (see
+<code>04-resistors-and-networks.md</code>).</p>
+<h2 id="14-sensors-in-electric-vehicles">1.4 Sensors in Electric Vehicles</h2>
+<p>The same "what do we actually measure" question applies to EVs. Measurable
+subsystems around the EV powertrain:</p>
+<ul>
+<li><strong>Thermal management</strong> — air conditioning, pressure &amp; temperature</li>
+<li><strong>Tyre monitoring</strong> — valve-mounted / tyre-mounted TPMS, tread depth</li>
+<li><strong>Electric motor</strong> — rotor position, stator temperature</li>
+<li><strong>Brake system</strong> — pedal force, drum force</li>
+<li><strong>Battery</strong> — passive &amp; active fuses, current-sensing module (IVT),
+  insulation monitoring device, contactors</li>
+</ul>
+<p><img alt="EV powertrain sensor map" src="../../assets/img/ev-sensors-1.png" />
+<img alt="EV powertrain sensor detail" src="../../assets/img/ev-sensors-2.png" /></p>
+<h3 id="the-only-three-measurable-quantities">The only three measurable quantities</h3>
+<p>A recurring, explicitly emphasised point: in an EV powertrain (inverter,
+motor, battery, charging inlet, cooling), the sensors you actually place
+measure only:</p>
+<blockquote>
+<p><strong>Voltage, Current, and Temperature.</strong></p>
+</blockquote>
+<p>Everything else — <strong>State of Charge (SOC), power, speed, torque</strong> — is a
+<strong>calculated/derived</strong> value, not something you can put a sensor on
+directly. ("Please don't say that you will measure SOC or power — those are
+calculations.")</p>
+<p>Practical measurement notes from class:</p>
+<ul>
+<li><strong>Voltage is measured in parallel; current is measured in series</strong> —
+  but you cannot cut a live battery wire to insert an ammeter. In practice,
+  current in high-power circuits is measured using <strong>clamp meters</strong>, which
+  work on the <strong>CT/PT (current transformer / potential transformer)</strong>
+  principle — these are ultimately <strong>Hall-effect</strong> sensors.</li>
+<li>The throttle-position-sensor pattern (potentiometer → voltage divider)
+  reappears everywhere; what differs between applications is <em>how the
+  measurement is wired and calibrated</em>, not the underlying physics.</li>
+</ul>
+<h2 id="15-the-generic-instrumentation-chain">1.5 The generic instrumentation chain</h2>
+<pre><code>Measurable quantity → [Sensor] → [Signal Conditioning] → [ADC] → ECU → [DAC] → [Actuator]
+</code></pre>
+<ul>
+<li><strong>Sensor output</strong> is analog (commonly assumed 0–5 V unless stated
+  otherwise).</li>
+<li><strong>Signal conditioning</strong> = amplification (weak mV/µV signals), attenuation
+  (too-large signals), and filtering (e.g. removing noise around an engine
+  knock signal so only the true knock component remains).</li>
+<li><strong>ADC</strong> (Analog-to-Digital Converter) converts the conditioned analog
+  signal to digital so the <strong>ECU</strong> (a digital processor) can use it.</li>
+<li>If the ECU needs to drive an analog actuator, a <strong>DAC</strong>
+  (Digital-to-Analog Converter) converts back.</li>
+</ul>
+<p>This chain is <em>the</em> justification for why the course needs to build up R,
+L, C, magnetics, signal conditioning, semiconductor switches, ADC/DAC, and
+digital fundamentals before returning to sensors in depth.</p>
+    </article>
+    <div class="pagenav">
+      <div class="pagenav-inner"><a class="prev" href="../index.html">← Course Map</a><a class="next" href="02-sensors-classification.html">Module 2: Sensor Classification →</a></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -13,7 +13,7 @@ Copper, Iron,            Selenium, Gallium          Plastic, Diamond, etc.
 Aluminum, etc.           arsenide, etc.
 ```
 
-![Classification of materials by resistance](../assets/img/material-classification-1.png)
+![Classification of materials by resistance](/assets/img/material-classification-1.png)
 
 ### Band-gap (energy-band) view
 
@@ -25,7 +25,7 @@ Aluminum, etc.           arsenide, etc.
 - **Insulator:** a wide band gap (~5 eV or more) — electrons essentially
   cannot cross into the conduction band under normal conditions.
 
-![Energy band diagrams: conductor, semiconductor, insulator](../assets/img/material-classification-2.png)
+![Energy band diagrams: conductor, semiconductor, insulator](/assets/img/material-classification-2.png)
 
 ## 9.2 Conductor vs Insulator — atomic view
 
@@ -35,7 +35,7 @@ Aluminum, etc.           arsenide, etc.
   outermost orbit — a full/stable shell, strongly bound, nothing to spare
   for conduction.
 
-![Copper vs Neon atomic structure](../assets/img/conductor-insulator.png)
+![Copper vs Neon atomic structure](/assets/img/conductor-insulator.png)
 
 ## 9.3 Silicon — the semiconductor atom
 
@@ -48,7 +48,7 @@ leave their covalent bond/orbit. Where an electron leaves, it creates a
 **hole** (an effective positive charge) — this is called **electron-hole
 pair generation**.
 
-![Silicon atom and crystal lattice](../assets/img/semiconductor-atom.png)
+![Silicon atom and crystal lattice](/assets/img/semiconductor-atom.png)
 
 ## 9.4 Doping — creating N-type and P-type semiconductors
 
@@ -85,8 +85,8 @@ P-type  →  majority carriers = holes
 > important reason NPN transistors are generally faster/preferred over PNP
 > in many designs (discussed further in the transistor module).
 
-![Pentavalent/trivalent doping, donor/acceptor atoms](../assets/img/doping-basics.png)
-![N-type and P-type semiconductor structure](../assets/img/doping-np.png)
+![Pentavalent/trivalent doping, donor/acceptor atoms](/assets/img/doping-basics.png)
+![N-type and P-type semiconductor structure](/assets/img/doping-np.png)
 
 ## 9.5 The P–N Junction
 
@@ -96,8 +96,8 @@ near the junction diffuse across and recombine with nearby holes, leaving
 behind fixed (immobile) ion charges: negative ions on the P-side, positive
 ions on the N-side of the junction.
 
-![P-N junction: ions and depletion layer](../assets/img/pn-junction-1.png)
-![P-N junction structure](../assets/img/pn-junction-2.png)
+![P-N junction: ions and depletion layer](/assets/img/pn-junction-1.png)
+![P-N junction structure](/assets/img/pn-junction-2.png)
 
 ### Forward bias
 
@@ -126,7 +126,7 @@ ions on the N-side of the junction.
 | Current flow | Large forward current if `V_S > 0.7V` | Small reverse (saturation + leakage) current |
 | Depletion layer | Narrow | Wide |
 
-![Forward vs reverse bias comparison table](../assets/img/pn-junction-bias-diagram.png)
+![Forward vs reverse bias comparison table](/assets/img/pn-junction-bias-diagram.png)
 
 ### Physical/intuitive explanation (from class discussion)
 
@@ -138,7 +138,7 @@ ions on the N-side of the junction.
   been pulled away from the junction by the reverse field), so essentially
   no current flows — only a small **leakage current**.
 
-![Forward/reverse bias physical explanation with hand annotation](../assets/img/pn-junction-bias.png)
+![Forward/reverse bias physical explanation with hand annotation](/assets/img/pn-junction-bias.png)
 
 ### Simple switch analogy
 
@@ -153,4 +153,4 @@ A bench demo with a power supply, curve tracer, and multimeter is used to
 show the diode's I–V characteristic directly (forward-bias knee,
 reverse-bias leakage/breakdown regions).
 
-![Diode curve-tracer/multimeter bench setup](../assets/img/pn-junction-bench.png)
+![Diode curve-tracer/multimeter bench setup](/assets/img/pn-junction-bench.png)

@@ -6,6 +6,7 @@ Every automotive electronic system is a variant of one of three flows:
 
 **(a) Control application (closed loop)**
 
+<div style="max-height:180px; overflow-y:auto; border:1px solid #ddd; padding:8px; background:#f9f9f9;">
 ```
 command input → [sensor] → electronic signal processing → [actuator] → plant
                                                                │
@@ -13,6 +14,7 @@ command input → [sensor] → electronic signal processing → [actuator] → p
                                                                │
                                         (fed back as control input) ◄────┘
 ```
+</div>
 
 **(b) Measurement/display application (open loop, no feedback)**
 
@@ -26,7 +28,7 @@ physical variable being measured → [sensor] → electronic signal processing �
 input data (message) → [source] → [channel] → [receiver] → output data (message)
 ```
 
-![System flow diagrams](../assets/img/systems-flow.png)
+![System flow diagrams](/assets/img/systems-flow.png)
 
 **Why is (a) closed-loop and (b) not?** In (a) the system continuously
 monitors the controlled variable and feeds it back — e.g. active engine
@@ -54,13 +56,13 @@ Six signals commonly named as the sensors of interest for this block:
 5. Exhaust Gas Recirculation (EGR) valve position
 6. Exhaust Gas Oxygen (EGO) concentration
 
-![Building blocks / engine control block diagram](../assets/img/systems-blocks.png)
+![Building blocks / engine control block diagram](/assets/img/systems-blocks.png)
 
 A real wiring-diagram view of this same subsystem (battery, ECM, MAF, TPS,
 IAT, injectors, relays) shows how these signals are physically wired in a
 vehicle:
 
-![Full engine subsystem wiring diagram](../assets/img/wiring-diagram.png)
+![Full engine subsystem wiring diagram](/assets/img/wiring-diagram.png)
 
 ## 1.3 Worked example — Engine Control System
 
@@ -81,7 +83,7 @@ Ignition system
 Combustion and power output
 ```
 
-![Engine control system block diagram](../assets/img/engine-control.png)
+![Engine control system block diagram](/assets/img/engine-control.png)
 
 ### Sensor → technology → signal table (built live in class)
 
@@ -113,8 +115,8 @@ subsystems around the EV powertrain:
 - **Battery** — passive & active fuses, current-sensing module (IVT),
   insulation monitoring device, contactors
 
-![EV powertrain sensor map](../assets/img/ev-sensors-1.png)
-![EV powertrain sensor detail](../assets/img/ev-sensors-2.png)
+![EV powertrain sensor map](/assets/img/ev-sensors-1.png)
+![EV powertrain sensor detail](/assets/img/ev-sensors-2.png)
 
 ### The only three measurable quantities
 

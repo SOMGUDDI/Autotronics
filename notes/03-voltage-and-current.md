@@ -8,7 +8,7 @@
 | Voltage | Pressure |
 | Current (charge per unit time) | Flow |
 
-![Water analogy for voltage/current](../assets/img/vi-water-analogy.png)
+![Water analogy for voltage/current](/assets/img/vi-water-analogy.png)
 
 Batteries in series behave like water tanks stacked in series — each cell
 adds its pressure (voltage), e.g. 1.5 V + 1.5 V + 1.5 V = 4.5 V, and so on.
@@ -17,7 +17,7 @@ with LED brightness increasing) against a "water system" ladder (PSI
 pressure increasing, water flow increasing, lamp brightness increasing) —
 both stacks behave identically in principle.
 
-![Electrical vs water system side by side](../assets/img/vi-electric-water.png)
+![Electrical vs water system side by side](/assets/img/vi-electric-water.png)
 
 ## 3.2 AC vs DC
 
@@ -45,7 +45,7 @@ v(t) = Vm sin(ωt)
 T = 1/f        (T = time period)
 ```
 
-![DC voltage and AC sine wave plots](../assets/img/vi-dc-ac-plots.png)
+![DC voltage and AC sine wave plots](/assets/img/vi-dc-ac-plots.png)
 
 **Class note:** when categorising sensor outputs earlier, whether the
 output was AC or DC wasn't specified — sensors will later be explicitly

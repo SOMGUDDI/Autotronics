@@ -24,7 +24,7 @@ condition `C` must also be satisfied).
 Y = (A + B) · C
 ```
 
-![Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined](../assets/img/boolean-laws.png)
+![Ladder-style switch diagrams for (a) OR, (b) AND, (c) combined](/assets/img/boolean-laws.png)
 
 ## 13.2 Basic Boolean identities
 
@@ -65,7 +65,7 @@ A + B = A' · B'          (complement of OR = AND of complements)
 A · B = A' + B'          (complement of AND = OR of complements)
 ```
 
-![De Morgan's Law statement](../assets/img/demorgan.png)
+![De Morgan's Law statement](/assets/img/demorgan.png)
 
 ### Worked simplification using De Morgan's law
 
@@ -84,7 +84,7 @@ Net result: a two-level NAND-based circuit simplifies down to a single
 **NOT** gate feeding an **AND** gate (`Q = Ā · B`), demonstrating how
 Boolean algebra reduces gate count in real digital circuits.
 
-![Worked simplification: NAND circuit reduces via De Morgan's law](../assets/img/boolean-simplify.png)
+![Worked simplification: NAND circuit reduces via De Morgan's law](/assets/img/boolean-simplify.png)
 
 ## 13.4 Worked design example — art gallery light switch
 
@@ -119,7 +119,7 @@ rule, hence `t̄` — complement of the daytime timer signal).
 This is implemented as an **AND gate** (`p · l`) feeding into an **OR
 gate** together with the (inverted) timer signal.
 
-![Art-gallery logic design example, gate-level circuit](../assets/img/logic-example.png)
+![Art-gallery logic design example, gate-level circuit](/assets/img/logic-example.png)
 
 ## 13.5 Why this matters for the course
 

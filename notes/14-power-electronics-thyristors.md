@@ -17,7 +17,7 @@ each cycle the switch conducts** — this is the conceptual basis of
 **PWM (Pulse Width Modulation)**-style power control, and specifically of
 how **thyristors/SCRs regulate AC power** (below).
 
-![Voltage chopping waveform and average-voltage formula](../assets/img/voltage-chopping.png)
+![Voltage chopping waveform and average-voltage formula](/assets/img/voltage-chopping.png)
 
 ## 14.2 Thyristor (SCR — Silicon Controlled Rectifier)
 
@@ -49,7 +49,7 @@ Anode ──[P-N-P-N]── Cathode
   cathode +), the SCR blocks current entirely (like a reverse-biased
   diode), up to its **reverse breakdown voltage**.
 
-![Thyristor structure, symbol, and I-V characteristic curve](../assets/img/thyristor-1.png)
+![Thyristor structure, symbol, and I-V characteristic curve](/assets/img/thyristor-1.png)
 
 ### How it's used to control AC power delivered to a load
 
@@ -74,7 +74,7 @@ a **shorter or longer portion of that half-cycle** — this is called
 hence the practical control range is bounded at 50% of full-wave power; a
 pair of SCRs, or a Triac, is used to control both halves — see below.)
 
-![Thyristor phase-control conduction diagram and gate trigger circuit](../assets/img/thyristor-2.png)
+![Thyristor phase-control conduction diagram and gate trigger circuit](/assets/img/thyristor-2.png)
 
 ## 14.3 Triac
 
@@ -100,7 +100,7 @@ can control power across the **full 0–100%** range of the AC waveform — it
 is the standard device behind household and automotive **AC dimmer/speed
 controllers**.
 
-![Triac structure and equivalence to two anti-parallel SCRs](../assets/img/triac.png)
+![Triac structure and equivalence to two anti-parallel SCRs](/assets/img/triac.png)
 
 ## 14.4 Where this fits in the course
 

@@ -32,7 +32,7 @@ I = (ε₁ − ε₂) / (R₁ + R₂) = (6.0 V − 12 V) / (8.0 Ω + 10 Ω) = �
 (The negative sign indicates the assumed current direction was opposite to
 the actual direction — a standard KVL bookkeeping result.)
 
-![KCL and KVL statements with worked example](../assets/img/kcl-kvl.png)
+![KCL and KVL statements with worked example](/assets/img/kcl-kvl.png)
 
 ## 8.3 Two circuit-solving methods demonstrated
 
@@ -52,7 +52,7 @@ Loop 2:  5·I_B − 20 − 10 + 10(I_B − I_A) = 0
   topology) fall out directly.
 - Homework noted: solving the resulting system of simultaneous equations.
 
-![Mesh analysis worked example](../assets/img/kvl-example.png)
+![Mesh analysis worked example](/assets/img/kvl-example.png)
 
 ### Method 2 — Nodal Analysis
 
@@ -70,7 +70,7 @@ Constraint: I₁ + I₂ = I₃
 (Exact coefficients depend on the specific resistor values in the circuit
 being solved — the structure/approach is the transferable part.)
 
-![Nodal analysis setup](../assets/img/mesh-nodal.png)
+![Nodal analysis setup](/assets/img/mesh-nodal.png)
 
 ### General series/parallel reduction (recap, avoid overkill)
 
@@ -101,7 +101,7 @@ Any linear circuit with DC sources and linear resistances, as seen from two
 load terminals A–B, can be replaced by a single voltage source `V_TH` in
 series with a single resistor `R_TH`.
 
-![Thevenin's theorem statement and equivalent-circuit concept](../assets/img/thevenin-intro.png)
+![Thevenin's theorem statement and equivalent-circuit concept](/assets/img/thevenin-intro.png)
 
 ### Worked example 1
 
@@ -110,7 +110,7 @@ find `R_TH`, then `V_TH` found by open-circuiting the load and solving the
 remaining circuit (voltage-divider style, since no current flows into the
 open load branch).
 
-![Thevenin worked resistor network](../assets/img/thevenin-example1.png)
+![Thevenin worked resistor network](/assets/img/thevenin-example1.png)
 
 ### Worked example 2 — step-by-step reduction
 
@@ -124,7 +124,7 @@ Given `R_L1 = 100 Ω`, `R_L2 = 1000 Ω`, `R_L3 = 5 kΩ` combined with a 6 kΩ,
 5. Then find `I₁`, `I₂`, `I₃` in the individual branches using current
    division on the parallel section.
 
-![Thevenin equivalent reduction, worked numeric example](../assets/img/thevenin-example2.png)
+![Thevenin equivalent reduction, worked numeric example](/assets/img/thevenin-example2.png)
 
 ### General Thevenin worked circuit with two sources
 

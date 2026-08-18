@@ -15,7 +15,7 @@ Anode ──►|── Cathode        (arrow points in the direction conventiona
 Circuit: source `V_S` in series with resistor `R` and diode, output
 `V_D` across the diode.
 
-![Diode structure, symbol, and circuit](../assets/img/diode-basics.png)
+![Diode structure, symbol, and circuit](/assets/img/diode-basics.png)
 
 ### Diode I–V characteristic
 
@@ -41,7 +41,7 @@ Circuit: source `V_S` in series with resistor `R` and diode, output
 | Practical, forward (< knee) | Open | < 0.7 V | ≈ 0 A |
 | Practical, forward (≥ knee) | Conducting | ≈ 0.7 V (silicon) | Rises steeply |
 
-![Ideal diode states — forward/reverse, open/closed](../assets/img/diode-waveforms.png)
+![Ideal diode states — forward/reverse, open/closed](/assets/img/diode-waveforms.png)
 
 ## 10.3 Diode as a rectifier — AC to DC
 
@@ -78,7 +78,7 @@ Rotor (field coils, via slip rings) → Stator (3-phase windings)
 - The **voltage regulator** controls rotor field current to hold the
   charging voltage roughly constant regardless of engine RPM.
 
-![Typical alternator circuit — rotor, stator, rectifier, regulator](../assets/img/alternator-charging.png)
+![Typical alternator circuit — rotor, stator, rectifier, regulator](/assets/img/alternator-charging.png)
 
 **Waveform note (from board annotation):** the rectified alternator output
 is not smooth DC — it's **pulsating DC**, with ripple at multiples of the

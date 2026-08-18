@@ -19,7 +19,7 @@ Collector**. It comes in two flavours:
 holes — both types of charge carrier participate, unlike unipolar (FET)
 devices which use only one carrier type.
 
-![PNP/NPN construction and two-diode analogy](../assets/img/bjt-basics.png)
+![PNP/NPN construction and two-diode analogy](/assets/img/bjt-basics.png)
 
 ### Two-diode analogy
 
@@ -38,7 +38,7 @@ I_C ≈ I_E                 (since I_B is very small)
 β_dc = I_C / I_B           (common-emitter current gain — "current gain of the transistor")
 ```
 
-![Transistor current directions and gain formulas](../assets/img/bjt-symbols.png)
+![Transistor current directions and gain formulas](/assets/img/bjt-symbols.png)
 
 ### Worked example
 
@@ -66,7 +66,7 @@ curves, one per base current `I_B`):
   to the base current `I_B` flowing in — this is the region used for
   linear amplification.
 
-![Transistor I_C vs V_CE output characteristics — three regions](../assets/img/bjt-regions.png)
+![Transistor I_C vs V_CE output characteristics — three regions](/assets/img/bjt-regions.png)
 
 ## 11.4 Transistor as a switch
 
@@ -87,7 +87,7 @@ amplifier but as a **digital switch**:
   on** (transistor acts as closed/short circuit, sinking current from
   the LED to ground).
 
-![Transistor-as-switch driving an LED](../assets/img/transistor-switch.png)
+![Transistor-as-switch driving an LED](/assets/img/transistor-switch.png)
 
 ## 11.5 Field Effect Transistors (FET) — the "unipolar" alternative
 
@@ -99,7 +99,7 @@ Three terminals: **Gate (G), Drain (D), Source (S)**. The gate voltage
 drawing (significant) gate current — this is the key structural difference
 from a BJT, where base *current* controls the collector current.
 
-![FET structure and symbol](../assets/img/fet-basics.png)
+![FET structure and symbol](/assets/img/fet-basics.png)
 
 ## 11.6 MOSFET
 
@@ -127,8 +127,8 @@ Source (S)         Gate (G)         Drain (D)
   charge carriers to switch it, a MOSFET switches **much faster** than an
   equivalent BJT.
 
-![MOSFET cross-section structure](../assets/img/mosfet-structure.png)
-![MOSFET circuit symbol and substrate view](../assets/img/mosfet-symbol.png)
+![MOSFET cross-section structure](/assets/img/mosfet-structure.png)
+![MOSFET circuit symbol and substrate view](/assets/img/mosfet-symbol.png)
 
 ### MOSFET advantages (as listed in class) vs BJT
 

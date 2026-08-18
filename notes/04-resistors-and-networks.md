@@ -36,7 +36,7 @@ count/colour against the chart below).
 | Gold | — | ×0.1 | ±5% (J) |
 | Silver | — | ×0.01 | ±10% (K) |
 
-![Resistor and colour code chart](../assets/img/resistor-colorcode.png)
+![Resistor and colour code chart](/assets/img/resistor-colorcode.png)
 
 ## 4.2 Resistors in Series — the Voltage Divider
 
@@ -50,7 +50,7 @@ This is called a **voltage divider network** — you can chain as many
 resistors as needed to split a total voltage into whatever proportions you
 want.
 
-![Resistors in series](../assets/img/resistors-series.png)
+![Resistors in series](/assets/img/resistors-series.png)
 
 ### General voltage divider formula
 
@@ -72,7 +72,7 @@ When resistors are connected **in parallel**:
 
 This is called a **current divider network**.
 
-![Resistors in parallel](../assets/img/resistors-parallel.png)
+![Resistors in parallel](/assets/img/resistors-parallel.png)
 
 ### Current-division derivation (from class)
 
@@ -81,8 +81,8 @@ I = I₁ + I₂ = V/R₁ + V/R₂ = V(1/R₁ + 1/R₂)
 V/I = 1 / (1/R₁ + 1/R₂) = R₁R₂/(R₁+R₂)   ← this is R_eq for parallel R
 ```
 
-![Voltage/current division board work](../assets/img/voltage-current-division.png)
-![Current division derivation](../assets/img/current-division.png)
+![Voltage/current division board work](/assets/img/voltage-current-division.png)
+![Current division derivation](/assets/img/current-division.png)
 
 ## 4.4 Voltage divider circuit — worked light-sensor example
 
@@ -102,7 +102,7 @@ increases too. This exact voltage-divider pattern is the working principle
 behind the **Throttle Position Sensor (TPS)** — a potentiometer is nothing
 but a voltage divider with a moving wiper.
 
-![Voltage divider circuit and light-level table](../assets/img/voltage-divider-1.png)
+![Voltage divider circuit and light-level table](/assets/img/voltage-divider-1.png)
 
 ### LED series-resistor design problem (homework style)
 
@@ -117,7 +117,7 @@ Using `V_S = I_F·R_S + V_F` ⇒ solve for `R_S` given `I_F < 10 mA`.
 `V_in = 3.3 V`, ratio `R2/(R1+R2)` — used in the context of a
 capacitive-touch / window-switch MCU circuit shown alongside.)
 
-![LED voltage divider + example circuit](../assets/img/voltage-divider-led.png)
+![LED voltage divider + example circuit](/assets/img/voltage-divider-led.png)
 
 ### Real automotive application — blower motor resistor pack
 
@@ -127,7 +127,7 @@ through different combinations of resistors (R1, R2, R3) before the motor,
 using a fan control switch. Fewer resistors in the path ⇒ less voltage
 drop ⇒ higher motor speed.
 
-![Blower motor resistor voltage-divider application](../assets/img/voltage-divider-blower.png)
+![Blower motor resistor voltage-divider application](/assets/img/voltage-divider-blower.png)
 
 ## 4.5 Series vs Parallel — quick summary
 

@@ -18,7 +18,7 @@ Given `v(t) = Vm sin(ωt)`, what is `i(t)` for each passive element?
   Ohm's law directly in terms of L or C without going through `ωL` or
   `1/ωC`.
 
-![AC input Ohm's law for R, L, C](../assets/img/ac-ohms-law.png)
+![AC input Ohm's law for R, L, C](/assets/img/ac-ohms-law.png)
 
 ## 7.2 RLC circuit — Impedance
 
@@ -42,7 +42,7 @@ For `v(t) = Vm sin(ωt)`, `i(t) = Im sin(ωt)`:
 3. **Capacitor:** `v(t) = (1/C)∫i dt` — because of the integral term,
    **current leads voltage by an angle φ**.
 
-![AC phasor relationships for R, L, C](../assets/img/ac-phasors.png)
+![AC phasor relationships for R, L, C](/assets/img/ac-phasors.png)
 
 **Memory aid:** *"ELI the ICE man"* — for an inductor (**L**), **E**
 (voltage) leads **I** (current); for a capacitor (**C**), **I** leads **E**.
@@ -76,7 +76,7 @@ For `v(t) = Vm sin(ωt)`, `i(t) = Im sin(ωt)`:
 > **variable** ("AC") Ohms value that depends on the frequency of the power
 > supply.
 
-![Pure resistance / capacitance / inductive circuits compared](../assets/img/pure-circuits.png)
+![Pure resistance / capacitance / inductive circuits compared](/assets/img/pure-circuits.png)
 
 ## 7.6 Series RLC — filter behaviour (qualitative, from class)
 

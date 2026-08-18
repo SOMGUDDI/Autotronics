@@ -29,7 +29,7 @@ Energy stored:
 W = ½ · C · V²   (also written W = Q·V, worked as an equivalent check)
 ```
 
-![Capacitor structure and equations](../assets/img/capacitor-basics.png)
+![Capacitor structure and equations](/assets/img/capacitor-basics.png)
 
 ### Worked numeric example (electrolytic capacitor vs. a battery)
 
@@ -43,7 +43,7 @@ physical size stores dramatically less energy than a small battery** — a
 capacitor is fast to charge/discharge but low-energy-density; a battery is
 the opposite.
 
-![Capacitor energy comparison](../assets/img/capacitor-energy.png)
+![Capacitor energy comparison](/assets/img/capacitor-energy.png)
 
 ## 5.2 Ohm's law analogue for a capacitor
 
@@ -70,7 +70,7 @@ Mirror image of resistors — it is the **reverse of the resistor rule**:
 1/C_eq = 1/C₁ + 1/C₂     ⇒     C_eq = C₁C₂ / (C₁ + C₂)
 ```
 
-![Capacitors in series](../assets/img/capacitors-series.png)
+![Capacitors in series](/assets/img/capacitors-series.png)
 
 > **Note:** the instructor explicitly stated that voltage-division /
 > current-division formulas (as used for resistor networks) are **not**
@@ -83,7 +83,7 @@ Mirror image of resistors — it is the **reverse of the resistor rule**:
 C_eq = C₁ + C₂
 ```
 
-![Capacitors in parallel](../assets/img/capacitors-parallel.png)
+![Capacitors in parallel](/assets/img/capacitors-parallel.png)
 
 ## 5.5 Capacitor as filter / noise suppressor (automotive application)
 
@@ -108,7 +108,7 @@ C_eq = C₁ + C₂
                            GND
 ```
 
-![Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply](../assets/img/capacitor-noise-suppressor.png)
+![Capacitor as an AC-noise-to-ground bypass in a 12V automotive supply](/assets/img/capacitor-noise-suppressor.png)
 
 ## 5.6 Summary: Fully-charged behaviour
 
